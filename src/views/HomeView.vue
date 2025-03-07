@@ -20,6 +20,31 @@
         </span>
       </div>
     </section>
+    <section class="client">
+      <ul class="client-inner">
+        <li>Behance</li>
+        <li>Twitter</li>
+        <li>LinkedIn</li>
+        <li>Dribble</li>
+        <li>Facebook</li>
+      </ul>
+    </section>
+    <section class="services">
+      <div class="services-head">
+        <h3>The Services I Provide</h3>
+        <span>30+ Projects Completed</span>
+        <span>30+ Happy Clients</span>
+      </div> 
+      <div>
+        <div class="web">
+          <span></span>
+          <h4>Website Design</h4>
+          <p>Crafting engaging web eexperiences is at the heart of my expertise</p>
+        </div>
+        <div class="app"></div>
+        <div class="brand"></div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -89,17 +114,18 @@ h1 {
   flex-shrink: 0;
   background: #111;
   box-shadow: 0px 4px 200px 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid white;
 }
 .xpr-inner {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  margin: 7px 77px 32px 77px;
+  margin: 7px 77px 31px 77px;
 
   h3 {
     color: #EF2D1E;
     font-family: "Open Sans";
-    font-size: 64px;
+    font-size: 3rem;
     font-weight: 700;
   }
 
@@ -112,5 +138,20 @@ h1 {
     text-align: center;
     text-transform: uppercase;
   }
+}
+.client {
+  border: 1px solid red;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.client-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 84px;
+  list-style: none;
+  padding: 0;
 }
 </style>
