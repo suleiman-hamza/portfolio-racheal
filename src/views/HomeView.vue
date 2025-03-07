@@ -33,17 +33,30 @@
       <div class="services-head">
         <h3>The Services I Provide</h3>
         <span>30+ Projects Completed</span>
-        <span>30+ Happy Clients</span>
       </div> 
-      <div>
+      <div class="services-body">
         <div class="web">
-          <span></span>
+          <span class="services-icon"></span>
           <h4>Website Design</h4>
-          <p>Crafting engaging web eexperiences is at the heart of my expertise</p>
+          <p>Crafting engaging web eexperiences is at the heart of my expertise. I emplot modern web design principles, ensuring seamless navigation and aesthetic appeal. My process includes responsive design for cross-device compactibility and a strong emphasis on user-centric design.</p>
         </div>
-        <div class="app"></div>
-        <div class="brand"></div>
+        <div class="app">
+          <span class="services-icon"></span>
+          <h4>App Design</h4>
+          <p>Ispecialize in creating captivating and user-friendly mobile app designs. With a keen focus on user experience (UX) and user interface (UI) desugn</p>
+        </div>
+        <div class="brand">
+          <span class="services-icon"></span>
+          <h4>Website Design</h4>
+          <p>Crafting engaging web eexperiences is at the heart of my expertise. I emplot modern web design principles, ensuring seamless navigation and aesthetic appeal. My process includes responsive design for cross-device compactibility and a strong emphasis on user-centric design.</p>
+        </div>
       </div>
+    </section>
+    <section class="about">
+      <h3>About Me</h3>
+      <h5>I'm Racheal Alogbe, a dedicated and passionate Product Designer hailing from the vibrant city of Port Harcourt, Nigeria</h5>
+      <p>My journey in the world of design started with a curiosity to understand how things work and a relentless desire to make them work better. With a background in Petroleum Engineering, I've cultivated a profound appreciation for the intersection of technology, human behaviour and aesthetics. Read More</p>
+      <button>Read More</button>
     </section>
   </main>
 </template>
@@ -153,5 +166,54 @@ h1 {
   gap: 84px;
   list-style: none;
   padding: 0;
+}
+
+.services {
+  padding: 6.25rem;
+  .services-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3.3rem;
+
+    h3 {
+      font-size: 3.25rem;
+      font-family: open sans;
+      font-weight: 700;
+      line-height: normal;
+    }
+    span {
+      color: #d3382f;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+  .services-body {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .services-icon {
+    display: flex;
+    width: 86px;
+    height: 86px;
+    border: 1px solid #f98f89;
+  }
+  .web, .brand, .app {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 2rem;
+    background-color: #1e1e1e;
+
+    h4 {
+      font-family: Open Sans;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+    }
+  }
 }
 </style>
