@@ -10,8 +10,11 @@
         <p class="hero-what-i-do">Dedicated to Crafting Intuitive and User-Centric Design Solutions. Currently, I am based in Port Harcourt City Nigeria</p>
         <button class="here-view-work">View My Work</button>
       </div>
+      <div class="anim">
+
+      </div>
       <div class="hero-sec-img">
-        <img src="../assets/images/Rectangle 3.png" alt="Racheal Profile Image">
+        <!-- <img src="../assets/images/Rectangle 3.png" alt="Racheal Profile Image"> -->
       </div>
       <div class="xpr">
         <span class="xpr-inner">
@@ -43,7 +46,7 @@
         <div class="app">
           <span class="services-icon"></span>
           <h4>App Design</h4>
-          <p>Ispecialize in creating captivating and user-friendly mobile app designs. With a keen focus on user experience (UX) and user interface (UI) desugn</p>
+          <p>I specialize in creating captivating and user-friendly mobile app designs. With a keen focus on user experience (UX) and user interface (UI) design</p>
         </div>
         <div class="brand">
           <span class="services-icon"></span>
@@ -53,10 +56,21 @@
       </div>
     </section>
     <section class="about">
-      <h3>About Me</h3>
-      <h5>I'm Racheal Alogbe, a dedicated and passionate Product Designer hailing from the vibrant city of Port Harcourt, Nigeria</h5>
-      <p>My journey in the world of design started with a curiosity to understand how things work and a relentless desire to make them work better. With a background in Petroleum Engineering, I've cultivated a profound appreciation for the intersection of technology, human behaviour and aesthetics. Read More</p>
-      <button>Read More</button>
+      <div class="about-txt">
+        <h3>About Me</h3>
+        <h5>I'm Racheal Alogbe, a dedicated and passionate Product Designer hailing from the vibrant city of Port Harcourt, Nigeria</h5>
+        <p>My journey in the world of design started with a curiosity to understand how things work and a relentless desire to make them work better. With a background in Petroleum Engineering, I've cultivated a profound appreciation for the intersection of technology, human behaviour and aesthetics. Read More</p>
+        <button class="read-more">Read More</button>
+      </div>
+      <div class="about-svg">
+
+      </div>
+    </section>
+    <section class="featured">
+      <h2>Featured Project</h2>
+      <div class="ft-grid">
+
+      </div>
     </section>
   </main>
 </template>
@@ -169,7 +183,7 @@ h1 {
 }
 
 .services {
-  padding: 6.25rem;
+  border: 1px solid red;
   .services-head {
     display: flex;
     align-items: center;
@@ -191,7 +205,8 @@ h1 {
   }
   .services-body {
     display: flex;
-    gap: 1.5rem;
+    justify-content: space-between;
+    gap: 1rem;
   }
 
   .services-icon {
@@ -206,6 +221,7 @@ h1 {
     gap: 14px;
     padding: 2rem;
     background-color: #1e1e1e;
+    flex: 1;
 
     h4 {
       font-family: Open Sans;
@@ -214,6 +230,66 @@ h1 {
       line-height: 1;
       color: #fff;
     }
+  }
+}
+
+.about {
+  border: 1px solid yellow;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 4.5rem;
+
+  .about-txt {
+    /* max-width: 781px; */
+    h3 {
+    /* margin-top: 7.06rem; */
+    color: #fff;
+    font-size: 3.25rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: normal;
+    font-style: normal;
+    font-family: Open Sans;
+  }
+  h5 {
+    color: #FFF;
+    font-family: Open Sans;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  p {
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    line-height: 27.756px;
+    letter-spacing: 0.63px;
+    font-size: 1.125rem;
+  }
+  .read-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #C41A26;
+    padding: 0.875rem 2.06rem;
+    color: #fff;
+    font-size: 1.125rem;
+    border: none;
+    cursor: pointer;
+  }
+  }
+}
+
+.featured {
+  border: 1px solid magenta;
+
+  h2 {
+    color: #FFF;
+    font-size: 3.25rem;
+    font-weight: 700;
+    font-family: "Open Sans";
+    line-height: normal;
+    margin-bottom: 3.25rem;
   }
 }
 </style>

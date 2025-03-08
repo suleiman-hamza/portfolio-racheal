@@ -19,16 +19,21 @@
                 </div>
             </div>
         </section>
-
     </footer>
 </template>
 
 <style lang="css" scoped>
 .footer {
+    display: grid;
     border: 1px solid red;
 }
 .footer-sec {
-    margin: 72px;
+    /* margin: 72px; */
     border: 1px solid red;
+}
+.other-ft > ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
 }
 </style>
