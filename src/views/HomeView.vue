@@ -178,11 +178,22 @@
     </section>
     <section class="customer">
       <div class="yellow-card">
-        <h4>80+ Satisfied Customers</h4>
+        <h4>
+          80+
+          <br>Satisfied 
+          <br>Customers
+        </h4>
       </div>
       <div class="testimony">
         <article>
-          
+          <div>
+            <img src="../assets/images/" alt="bike shop">
+            <span>
+              <h5>Floyd Miles</h5>
+              <h5>Vice President, GoPro</h5>
+            </span>
+          </div>
+          <p>"I had the pleasure of working with Rachael, and I'm thrilled with the results. Her keen eye for detail and dedication to understanding our brand's essence resulted in a beautifully redesigned website. Rachael exceeded our expectations.”</p>
         </article>
         <article></article>
       </div>
@@ -614,6 +625,40 @@ h1 {
       display: block;
       object-fit: cover;
       aspect-ratio: 1;
+    }
+  }
+}
+
+.customer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  .yellow-card {
+    background-color: #FFE517;
+    padding: 221px 52px 57px 111px;
+    background-color: url('../assets/images/SuperToroid-Black-Matte.png');
+
+    h4 {
+      color: #000;
+      /* width: 289px; */
+
+      /* P/H2 */
+      font-family: "Open Sans";
+      font-size: 52px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+
+  .testimony {
+    padding: 35px;
+    background-color: #F9F9F9;
+
+    article {
+      border-radius: 20px;
+      background-color: #FFF;
+
     }
   }
 }
