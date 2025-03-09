@@ -66,10 +66,125 @@
 
       </div>
     </section>
+    <section class="skills">
+      <span>
+        <hr class="line"></hr>
+        <h5>Skills & Tools</h5>
+      </span>
+      <h2>What I Can Do</h2>
+      <div class="ski-tool">
+        <div class="cat-skills">
+          <span></span>
+            <!-- <img src="" alt=""> -->
+          <div>
+            <h6>Visual design</h6>
+            <h6>User Research</h6>
+            <h6>Usability Studies</h6>
+            <h6>Wireframing</h6>
+            <h6>Informaion Architecture</h6>
+            <h6>Rapid Prototyping</h6>
+            <h6>Collaboration</h6>
+            <h6>Problem Solving</h6>
+            <h6>Leadership</h6>
+            <h6>Communication</h6>
+          </div>  
+          </div>
+        <div class="cat-tools">
+          <span></span>
+          <div>
+            <h6>Figma</h6>
+            <h6>Zeplin</h6>
+            <h6>Mirror</h6>
+            <h6>Figmotion</h6>
+            <h6>Maza</h6>
+            <h6>Notion</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="qualification">
+      <span>
+        <hr class="line"></hr>
+        <h5>Experience and Education</h5>
+      </span>
+      <h2>Qualification</h2>
+      <section class="ed-xp">
+        <div class="xperience">
+          <h4>Experience</h4>
+          <div class="xp-list">
+            <div class="xp-1">
+              <span class="xp-work">
+                <h5>Product Designer</h5>
+                <h6>Muzzlab</h6>
+              </span>
+              <h6 class="xp-duration">January 2023 - Present</h6>
+            </div>
+            <div class="xp-1">
+              <span class="xp-work">
+                <h5>Women Techsters Fellow</h5>
+                <h6>WTFP-Tech4Dev</h6>
+              </span>
+              <h6 class="xp-duration">August 2022 - April 2023</h6>
+            </div>
+            <div class="xp-1">
+              <span class="xp-work">
+                <h5>Product Design Intern</h5>
+                <h6>Zuri Intership</h6>
+              </span>
+              <h6 class="xp-duration">May 2022 - August 2022</h6>
+            </div>
+          </div>
+        </div>
+        <div class="education">
+          <h4>Education</h4>
+          <div class="ed-list">
+            <div class="ed-1">
+              <span class="ed-work">
+                <h5>Product Designer</h5>
+                <h6>Muzzlab</h6>
+              </span>
+              <h6 class="ed-duration">January 2023 - Present</h6>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
     <section class="featured">
+      <span>
+        <hr class="line">
+        <h5>Portfolio</h5>
+      </span>
       <h2>Featured Project</h2>
       <div class="ft-grid">
-
+        <a href="#">
+          <img src="../assets/images/Group 35861 (2).png" alt="grid image">
+        </a>
+        <a href="#">
+          <img src="../assets/images/Group 35862 (1).png" alt="grid image">
+        </a>
+        <a href="#">
+          <img src="../assets/images/Group 35859 (1).png" alt="grid image">
+        </a>
+        <a href="#">
+          <img src="../assets/images/Group 46.png" alt="grid image">
+        </a>
+        <a href="#">
+          <img src="../assets/images/Group 35863.png" alt="grid image">
+        </a>
+        <a href="#">
+          <img src="../assets/images/Group 35860.png" alt="">
+        </a>
+      </div>
+    </section>
+    <section class="customer">
+      <div class="yellow-card">
+        <h4>80+ Satisfied Customers</h4>
+      </div>
+      <div class="testimony">
+        <article>
+          
+        </article>
+        <article></article>
       </div>
     </section>
   </main>
@@ -242,45 +357,213 @@ h1 {
   .about-txt {
     /* max-width: 781px; */
     h3 {
-    /* margin-top: 7.06rem; */
-    color: #fff;
-    font-size: 3.25rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-    line-height: normal;
-    font-style: normal;
-    font-family: Open Sans;
-  }
-  h5 {
-    color: #FFF;
-    font-family: Open Sans;
-    font-size: 1.5rem;
-    margin-bottom: 1.2rem;
-  }
-  p {
-    margin-bottom: 1.5rem;
-    color: #fff;
-    font-family: "Source Sans Pro";
-    font-weight: 400;
-    line-height: 27.756px;
-    letter-spacing: 0.63px;
-    font-size: 1.125rem;
-  }
-  .read-more {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #C41A26;
-    padding: 0.875rem 2.06rem;
-    color: #fff;
-    font-size: 1.125rem;
-    border: none;
-    cursor: pointer;
-  }
+      /* margin-top: 7.06rem; */
+      color: #fff;
+      font-size: 3.25rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      line-height: normal;
+      font-style: normal;
+      font-family: Open Sans;
+    }
+    h5 {
+      color: #FFF;
+      font-family: Open Sans;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      color: #fff;
+      font-family: "Source Sans Pro";
+      font-weight: 400;
+      line-height: 27.756px;
+      letter-spacing: 0.63px;
+      font-size: 1.125rem;
+    }
+    .read-more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #C41A26;
+      padding: 0.875rem 2.06rem;
+      color: #fff;
+      font-size: 1.125rem;
+      border: none;
+      cursor: pointer;
+    }
   }
 }
 
+.skills {
+  border: 1px solid gold;
+  padding: 100px 72px;
+
+  > span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .line {
+      width: 147px;
+      height: 2px;
+    }
+    h5 {
+      color: #3a3a3a;
+      font-size: 1.125rem;
+      letter-spacing: 0.63px;
+      line-height: 27.756px;
+      font-weight: 400;
+    }
+  }
+
+  > h2 {
+    font-weight: 700;
+    line-height: normal;
+    font-size: 3.5rem;
+    font-family: "Open Sans";
+    margin-bottom: 52px;
+  }
+
+  .ski-tool {
+    display: flex;
+    gap: 42px;
+    border: 1px solid red;
+
+    .cat-skills, .cat-tools {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      > span {
+        width: 174px;
+        height: 174px;
+        display: inline-block;
+        border: 1px solid hotpink;
+      }
+
+      > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 1.5rem;
+        h6 {
+          padding: 0.5rem;
+          font-size: 18px;
+          color: #fff;
+          font-weight: 400;
+          font-family: "Open Sans";
+        }
+      }
+    }
+  }
+}
+.qualification {
+  padding: 100px 72px;
+  border: 1px solid yellowgreen;
+
+  > span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .line {
+      width: 147px;
+      height: 2px;
+    }
+    h5 {
+      color: #FFF;
+      font-family: "Source Sans Pro";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      /* line-height: 154.2%; 27.756px */
+      letter-spacing: 0.63px;
+      margin-bottom: 8px;
+    }
+  }
+  h2 {
+    color: #FFF;
+
+    /* P/H2 */
+    font-family: "Open Sans";
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 52px;
+  }
+
+  .ed-xp {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid mediumslateblue;
+  }
+
+  .xperience, .education {
+    flex: 1;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    > h4 {
+      color: #FFF;
+      font-family: "Open Sans";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .xp-list, .ed-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      .xp-1, .ed-1 {
+        display: flex;
+        gap: 120px;
+        align-items: center;
+
+        .xp-work, .ed-work {
+          h5 {
+            color: #FFF;
+            font-family: "Open Sans";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+
+          h6 {
+            color: #FFF;
+
+            /* Body P/MSB */
+            font-family: "Source Sans Pro";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+          }
+        }
+
+        .xp-duration, .ed-duration {
+          color: #FFF;
+
+          /* Body P/LR */
+          font-family: "Source Sans Pro";
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+      }
+    }
+  }
+
+}
+
 .featured {
+  padding: 100px 72px;
   border: 1px solid magenta;
 
   h2 {
@@ -290,6 +573,48 @@ h1 {
     font-family: "Open Sans";
     line-height: normal;
     margin-bottom: 3.25rem;
+  }
+
+  > span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .line {
+      width: 147px;
+      height: 2px;
+    }
+    h5 {
+      color: #FFF;
+      font-family: "Source Sans Pro";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      /* line-height: 154.2%; 27.756px */
+      letter-spacing: 0.63px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .ft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+
+    a {
+      display: block;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 1;
+    }
   }
 }
 </style>
