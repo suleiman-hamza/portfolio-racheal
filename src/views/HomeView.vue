@@ -187,7 +187,7 @@
       <div class="testimony">
         <article>
           <div>
-            <img src="../assets/images/" alt="bike shop">
+            <img src="" alt="bike shop">
             <span>
               <h5>Floyd Miles</h5>
               <h5>Vice President, GoPro</h5>
