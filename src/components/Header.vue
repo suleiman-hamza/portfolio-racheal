@@ -49,7 +49,8 @@ a {
     align-items: center;
     padding: 0.5rem 1rem;
     /* border: 2px solid red; */
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     background-color: #000; /* Add background color to avoid transparency issues */
     z-index: 1000; /* Ensure it stays on top */

@@ -1,28 +1,10 @@
 <script setup lang="ts">
+import HeroSection from '@/components/HeroSection.vue';
 </script>
 
 <template>
   <main>
-    <section class="hero-section">
-      <div class="hero-sec-intro">
-        <h2 class="hero-sec-h2">Hi, I’m Rachael</h2>
-        <h1>Product Designer</h1>
-        <p class="hero-what-i-do">Dedicated to Crafting Intuitive and User-Centric Design Solutions. Currently, I am based in Port Harcourt City Nigeria</p>
-        <button class="here-view-work">View My Work</button>
-      </div>
-      <div class="anim">
-
-      </div>
-      <div class="hero-sec-img">
-        <img src="../assets/images/Rectangle 3.png" alt="Racheal Profile Image">
-      </div>
-      <div class="xpr">
-        <span class="xpr-inner">
-          <h3>2+</h3>
-          <h5>Years Of Experience</h5>
-        </span>
-      </div>
-    </section>
+    <HeroSection />
     <section class="client">
       <ul class="client-inner">
         <li>Behance</li>
@@ -227,11 +209,12 @@
 .hero-section {
   display: flex;
   flex-direction: row;
+  gap: 3rem;
   height: 100vh;
-  align-items: center;
+  align-items: end;
   position: relative;
-  /* border: 1px solid red; */
-  padding: 1rem;
+  border: 1px solid red;
+  /* padding: 1rem; */
 }
 .hero-sec-h2 {
   color: #EF2D1E;
@@ -245,7 +228,7 @@
 h1 {
   color: #FFF;
   font-family: "Open Sans";
-  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  font-size: clamp(2.2rem, 5vw + 1rem, 4rem);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -254,7 +237,7 @@ h1 {
 .hero-what-i-do {
   color: #FFF;
   font-family: "Source Sans Pro";
-  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.5rem);
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: 194.2%; /* 34.956px */
@@ -262,7 +245,8 @@ h1 {
 }
 
 .hero-sec-intro {
-  max-width: 640px;
+  width: 560px;
+  margin-block: auto;
 }
 
 .here-view-work {
@@ -275,8 +259,6 @@ h1 {
   font-weight: 700;
   line-height: normal;
   display: flex;
-  width: clamp(150px, 20vw, 200px);
-  height: clamp(150px, 20vw, 200px);
   padding: 0.5rem 1rem;
   border: none;
   cursor: pointer; 
@@ -285,65 +267,58 @@ h1 {
   flex-shrink: 0;
 }
 .hero-sec-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   overflow: hidden;
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 90vh;
 }
-.anim {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: url('../assets/images/Group 35864.png') no-repeat;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-}
+
 .hero-sec-img img {
-  width: 100%;
+  width: 600px;
   height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   aspect-ratio: 1;
 }
 
 .xpr {
   position: absolute;
+  right: 0;
   bottom: 0;
-  width: 333px;
-  height: 152px;
   flex-shrink: 0;
   background: #111;
   box-shadow: 0px 4px 200px 0px rgba(0, 0, 0, 0.25);
-  /* border: 1px solid white; */
+  border: 1px solid white;
 }
 .xpr-inner {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  margin: 7px 77px 31px 77px;
+  margin: 7px 65px 28px 65px;
 
   h3 {
     color: #EF2D1E;
     font-family: "Open Sans";
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
   }
 
   h5 {
     color: #FFF;
     font-family: "Source Sans Pro";
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
     line-height: normal;
     text-align: center;
     text-transform: uppercase;
   }
 }
 .client {
-  /* border: 1px solid red; */
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
   padding: 24px;
   display: flex;
   align-items: center;
@@ -809,13 +784,18 @@ h1 {
 
 
 
+@media (max-width: 788px) {
+  .client-inner {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+}
 
 /* responsive stuff for mobile*/
-@media (max-width: 768px) {
+/* @media (max-width: 788px) {
   .hero-section {
-    flex-direction: column;
     padding: 1rem;
-    height: auto;
+    height: 100vh;
   }
 
   .xpr {
@@ -854,5 +834,33 @@ h1 {
     flex-direction: column;
     gap: 1rem;
   }
+} */
+
+/* @media (max-width: 1018px) {
+
+.hero-sec-intro {
+
+}  
+.hero-sec-img img {
+  width: 500px;
 }
+
+.hero-sec-img {
+  bottom: 0;
+  right: 0;
+  height: 81vh;
+}
+} */
+
+/* @media (max-width: 978px) {
+.hero-sec-img img {
+  width: 440px;
+}
+
+.hero-sec-img {
+  bottom: 0;
+  right: 0;
+  height: 69vh;
+}
+} */
 </style>
