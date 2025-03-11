@@ -186,17 +186,39 @@
       </div>
       <div class="testimony">
         <article>
-          <div>
-            <img src="" alt="bike shop">
+          <div class="client-title">
+            <span class="replace-img">
+              <!-- <img src="" alt="bike shop"> -->
+            </span>
             <span>
               <h5>Floyd Miles</h5>
-              <h5>Vice President, GoPro</h5>
+              <h6>Vice President, GoPro</h6>
             </span>
           </div>
           <p>"I had the pleasure of working with Rachael, and I'm thrilled with the results. Her keen eye for detail and dedication to understanding our brand's essence resulted in a beautifully redesigned website. Rachael exceeded our expectations.”</p>
         </article>
-        <article></article>
+        <article>
+          <div class="client-title">
+            <span class="replace-img">
+              <!-- <img src="" alt="bike shop"> -->
+            </span>
+            <span>
+              <h5>Floyd Miles</h5>
+              <h6>Vice President, GoPro</h6>
+            </span>
+          </div>
+          <p>"I had the pleasure of working with Rachael, and I'm thrilled with the results. Her keen eye for detail and dedication to understanding our brand's essence resulted in a beautifully redesigned website. Rachael exceeded our expectations.”</p>
+        </article>
       </div>
+    </section>
+    <section class="contact">
+      <div class="contact-left">
+        <h3>Ready to bring your ideas to life?</h3>
+        <p>Let's connect and make it happen.</p>
+      </div>
+      <form class="contact-form">
+        <h3>Send Us A Message</h3>
+      </form>
     </section>
   </main>
 </template>
@@ -636,7 +658,7 @@ h1 {
   .yellow-card {
     background-color: #FFE517;
     padding: 221px 52px 57px 111px;
-    background-color: url('../assets/images/SuperToroid-Black-Matte.png');
+    position: relative;
 
     h4 {
       color: #000;
@@ -650,15 +672,109 @@ h1 {
       line-height: normal;
     }
   }
+  .yellow-card::after {
+    content: url('../assets/images/SuperToroid-Black-Matte.png');
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 
   .testimony {
     padding: 35px;
     background-color: #F9F9F9;
+    display: flex;
+    gap: 29px;
 
     article {
       border-radius: 20px;
       background-color: #FFF;
+      padding: 42px 24px;
 
+      .client-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 26px;
+        margin-bottom: 25px;
+
+        h5 {
+          color: #1E1E1E;
+          font-feature-settings: 'liga' off;
+          font-family: Inter;
+          font-size: 23.675px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 36.828px; /* 155.556% */
+        }
+
+        h6 {
+          color: #3A3A3A;
+          font-feature-settings: 'liga' off;
+          font-family: Inter;
+          font-size: 18.414px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 26.306px; /* 142.857% */
+        }
+      }
+
+      .replace-img {
+        display: inline-block;
+        width: 104px;
+        height: 104px;
+        border: 1px solid #1e1e1e;
+      }
+
+      p {
+        color: #3A3A3A;
+        font-feature-settings: 'liga' off;
+        font-family: "Source Sans Pro";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26.828px; /* 167.399% */
+      }
+    }
+  }
+}
+
+.contact {
+  background-color: #191919;
+
+  .contact-left {
+
+    h3 {
+      color: #FFF;
+
+      /* P/H2 */
+      font-family: "Open Sans";
+      font-size: 52px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+          }
+
+    p {
+      color: #FFF;
+      font-family: "Source Sans Pro";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 154.2%; /* 27.756px */
+      letter-spacing: 0.9px;
+    }
+  }
+
+  .contact-form {
+    background-color: #0E0D0D;
+
+    h3 {
+      color: #FFF;
+      /* P/H3 */
+      font-family: "Open Sans";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
     }
   }
 }
