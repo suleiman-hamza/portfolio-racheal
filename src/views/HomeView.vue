@@ -14,7 +14,7 @@
 
       </div>
       <div class="hero-sec-img">
-        <!-- <img src="../assets/images/Rectangle 3.png" alt="Racheal Profile Image"> -->
+        <img src="../assets/images/Rectangle 3.png" alt="Racheal Profile Image">
       </div>
       <div class="xpr">
         <span class="xpr-inner">
@@ -226,15 +226,17 @@
 <style scoped>
 .hero-section {
   display: flex;
+  flex-direction: row;
   height: 100vh;
   align-items: center;
   position: relative;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  padding: 1rem;
 }
 .hero-sec-h2 {
   color: #EF2D1E;
   font-family: "Source Sans Pro";
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
   font-weight: 600;
   line-height: normal;
   letter-spacing: 1.28px;
@@ -243,36 +245,41 @@
 h1 {
   color: #FFF;
   font-family: "Open Sans";
-  font-size: 72px;
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
+
 .hero-what-i-do {
   color: #FFF;
   font-family: "Source Sans Pro";
-  font-size: 18px;
+  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.5rem);
   font-style: normal;
   font-weight: 600;
   line-height: 194.2%; /* 34.956px */
   letter-spacing: 0.9px;
 }
+
 .hero-sec-intro {
   max-width: 640px;
 }
+
 .here-view-work {
   background: #C41A26;
   color: #fff;
 
   /* Body P/LB */
   font-family: "Source Sans Pro";
-  font-size: 18px;
+  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
   font-weight: 700;
   line-height: normal;
   display: flex;
-  width: 177px;
-  height: 58px;
-  padding: 14px 33px;
+  width: clamp(150px, 20vw, 200px);
+  height: clamp(150px, 20vw, 200px);
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer; 
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -280,7 +287,28 @@ h1 {
 .hero-sec-img {
   overflow: hidden;
   display: block;
+  max-width: 100%;
+  height: auto;
 }
+.anim {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../assets/images/Group 35864.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.hero-sec-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
 .xpr {
   position: absolute;
   bottom: 0;
@@ -289,7 +317,7 @@ h1 {
   flex-shrink: 0;
   background: #111;
   box-shadow: 0px 4px 200px 0px rgba(0, 0, 0, 0.25);
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 .xpr-inner {
   display: inline-flex;
@@ -315,7 +343,7 @@ h1 {
   }
 }
 .client {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 24px;
   display: flex;
   align-items: center;
@@ -776,6 +804,55 @@ h1 {
       font-weight: 700;
       line-height: normal;
     }
+  }
+}
+
+
+
+
+/* responsive stuff for mobile*/
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .xpr {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  .xpr-inner {
+    margin: 0;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .about-txt {
+    h3 {
+      font-size: 2.5rem;
+    }
+    h5 {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    .read-more {
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+    }
+  }
+
+  .client-inner {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 </style>
