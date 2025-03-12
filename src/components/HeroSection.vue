@@ -9,15 +9,16 @@
             <button class="cta">View My Works</button>
         </div>
         <div class="hero-img">
-            <!-- <img src="../assets/images/Rectangle 3.png" alt="racheal's photo" class="img"> -->
-             <img src="../assets/images/Property 1=Variant3.png" alt="" class="img">
+            <img src="../assets/images/Rectangle 3.png" alt="racheal's photo" class="img-2">
+            <img src="../assets/images/Property 1=Variant2 (1).png" alt="variant 2" class="anim blink">
+            <img src="../assets/images/Property 1=Variant4.png" alt="variant 4" class="img">
         </div>
     </section>
 </template>
 
 <style lang="css" scoped>
 .wrapper {
-    padding: 1.2rem;
+    padding-block: 1.2rem;
     max-width: 1186px;
     margin-inline: auto;
 }
@@ -27,13 +28,14 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     overflow: hidden;
+    margin-top: 3.5rem;
     /* border: 1px solid red; */
 }
 .hero-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     /* margin-block: 2rem; */
 }
 .hi {
@@ -48,43 +50,62 @@
     font-weight: 700;
 }
 .role-desc {
-    font-size: 1.125rem;
-    line-height: 34px;
-    font-weight: 600;
-    letter-spacing: 0.9px;
+    font-size: 1rem;
+    line-height: 24px;
+    /* font-weight: 600; */
+    /* letter-spacing: 0.9px; */
     margin-bottom: 15px;
 }
 .cta {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 11px 30px;
+    padding: 8px 22px;
+    /* padding: 11px 30px; */
     background-color: #d3382f;
     border: none;
     cursor: pointer;
     width: fit-content;
+    margin-bottom: 14px;
 }
 
 .hero-img {
-    border: 1px solid rgb(199, 212, 11);
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    /* border: 1px solid rgb(199, 212, 11); */
     height: auto;
-  display: block;
+  /* display: block; */
   object-fit: contain;
   aspect-ratio: 1;
-  background-image: url(../assets/images/Rectangle\ 3.png);
-  background-repeat: no-repeat;
+  overflow: hidden;
+  /* padding: 1rem; */
 }
-.img {
+.img, .img-2, .anim {
     width: 100%;
-    /* height: auto;
-    display: block;
-    position: relative; */
+    grid-column: 1 / 9;
+    grid-row: 1 / 9;
 }
-.img::before {
-    /* content: url('../assets/images/Property\ 1=Variant3.png');
-    position: absolute;
-    z-index: 100;
-    bottom: 200px; */
+
+.img-2 {
+    position: relative;
+    z-index: 2;
+    margin: auto;
+}
+
+.anim {
+    position: relative;
+    z-index: 0;
+    margin: auto;
+}
+
+.blink {
+    animation: blink 3s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 /*min-width for the desktop screens*/
@@ -92,7 +113,42 @@
     .hero-section-container {
         height: 100vh;
         grid-template-columns: 1fr 1fr;
-        /* margin-top: 8rem; */
+        margin-top: 2.25rem;
     }
+    .cta  {
+        padding: 11px 30px;
+    }
+    .role-desc {
+    font-size: 1.125rem;
+    line-height: 34px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+}
+
+.hero-img {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    /* border: 1px solid rgb(199, 212, 11); */
+    height: auto;
+  /* display: block; */
+  object-fit: contain;
+  aspect-ratio: 1;
+  overflow: hidden;
+  /* padding: 1rem; */
+}
+.img, .img-2 {
+    width: 100%;
+    grid-column: 1 / 9;
+    grid-row: 1 / 9;
+}
+
+.img-2 {
+    position: relative;
+    z-index: 1;
+    width: 110%;
+    height: 110%;
+    margin: auto;
+}
 }
 </style>
