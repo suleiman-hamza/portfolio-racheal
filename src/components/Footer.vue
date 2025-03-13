@@ -1,8 +1,8 @@
 <template>
-    <footer class="footer">
+    <footer class="footer wrapper">
         <section class="footer-sec">
             <a href="#" class="logo">
-                <img src="../assets/Subtract.png" alt="Logo" width="40px">
+                <img src="../assets/Subtract.png" alt="Logo">
             </a>
             <div class="other-ft">
                 <ul>
@@ -30,11 +30,19 @@
 </template>
 
 <style lang="css" scoped>
+    .footer {
+        background-color: #0e0d0d;
+    }
+.wrapper {
+    padding-block: 1.2rem;
+    max-width: 1186px;
+    margin-inline: auto;
+}
 .footer-sec {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 1rem;
     text-align: center;
 }
@@ -42,15 +50,17 @@
     margin-bottom: 1rem;
     width: min-content;
     margin-inline: auto;
+    /* border: 1px solid yellow; */
+}
+.logo img {
+    display: block;
+    width: 40px;
 }
 .icons {
     display: block;
     width: 34px;
     height: 34px;
     border: 1px solid white;
-}
-.other-ft {
-    margin-bottom: 1rem;
 }
 .other-ft > ul {
     display: flex;
@@ -59,6 +69,13 @@
     list-style-type: none;
     padding: 0;
     margin-bottom: 1rem;
+
+    li {
+        font-size: 18px;
+        font-family: "Source Sans Pro";
+        font-weight: 400;
+        color: #fff;
+    }
 }
 .other-ft > hr {
     border: 1px solid grey;
@@ -74,5 +91,32 @@
     display: flex;
     gap: 1.2rem;
     justify-content: center;
+}
+.group-right p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+@media (min-width: 765px) {
+    .footer-sec {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto;
+        align-items: center;
+    }
+    .logo {
+        margin-bottom: 0;
+    }
+    .logo img {
+        width: 100px;
+    }
+    .other-ft > ul {
+        flex-direction: row;
+    }
+    .group {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 </style>
