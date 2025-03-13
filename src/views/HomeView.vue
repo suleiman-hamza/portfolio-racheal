@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HeroSection from '@/components/HeroSection.vue';
+import Services from '@/components/Services.vue';
 </script>
 
 <template>
@@ -14,7 +15,8 @@ import HeroSection from '@/components/HeroSection.vue';
         <li>Facebook</li>
       </ul>
     </section>
-    <section class="services">
+    <Services />
+    <!-- <section class="services wrapper">
       <div class="services-head">
         <h3>The Services I Provide</h3>
         <span>30+ Projects Completed</span>
@@ -36,8 +38,8 @@ import HeroSection from '@/components/HeroSection.vue';
           <p>Crafting engaging web eexperiences is at the heart of my expertise. I emplot modern web design principles, ensuring seamless navigation and aesthetic appeal. My process includes responsive design for cross-device compactibility and a strong emphasis on user-centric design.</p>
         </div>
       </div>
-    </section>
-    <section class="about">
+    </section> -->
+    <section class="about wrapper">
       <div class="about-txt">
         <h3>About Me</h3>
         <h5>I'm Racheal Alogbe, a dedicated and passionate Product Designer hailing from the vibrant city of Port Harcourt, Nigeria</h5>
@@ -45,7 +47,7 @@ import HeroSection from '@/components/HeroSection.vue';
         <button class="read-more">Read More</button>
       </div>
       <div class="about-svg">
-
+        <img src="../assets/Subtract.png" alt="racheal png logo" width="200px" height="200px" class="r-img vibrate">
       </div>
     </section>
     <section class="skills">
@@ -206,82 +208,10 @@ import HeroSection from '@/components/HeroSection.vue';
 </template>
 
 <style scoped>
-.hero-section {
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  height: 100vh;
-  align-items: end;
-  position: relative;
-  border: 1px solid red;
-  /* padding: 1rem; */
-}
-.hero-sec-h2 {
-  color: #EF2D1E;
-  font-family: "Source Sans Pro";
-  font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: 1.28px;
-}
-
-h1 {
-  color: #FFF;
-  font-family: "Open Sans";
-  font-size: clamp(2.2rem, 5vw + 1rem, 4rem);
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.hero-what-i-do {
-  color: #FFF;
-  font-family: "Source Sans Pro";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 194.2%; /* 34.956px */
-  letter-spacing: 0.9px;
-}
-
-.hero-sec-intro {
-  width: 560px;
-  margin-block: auto;
-}
-
-.here-view-work {
-  background: #C41A26;
-  color: #fff;
-
-  /* Body P/LB */
-  font-family: "Source Sans Pro";
-  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
-  font-weight: 700;
-  line-height: normal;
-  display: flex;
-  padding: 0.5rem 1rem;
-  border: none;
-  cursor: pointer; 
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-}
-.hero-sec-img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  overflow: hidden;
-  display: block;
-  max-width: 100%;
-  height: 90vh;
-}
-
-.hero-sec-img img {
-  width: 600px;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  aspect-ratio: 1;
+.wrapper {
+    padding-block: 1.2rem;
+    max-width: 1186px;
+    margin-inline: auto;
 }
 
 .xpr {
@@ -333,79 +263,31 @@ h1 {
   padding: 0;
 }
 
-.services {
-  border: 1px solid red;
-  .services-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 3.3rem;
-
-    h3 {
-      font-size: 3.25rem;
-      font-family: open sans;
-      font-weight: 700;
-      line-height: normal;
-    }
-    span {
-      color: #d3382f;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: normal;
-    }
-  }
-  .services-body {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  .services-icon {
-    display: flex;
-    width: 86px;
-    height: 86px;
-    border: 1px solid #f98f89;
-  }
-  .web, .brand, .app {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    padding: 2rem;
-    background-color: #1e1e1e;
-    flex: 1;
-
-    h4 {
-      font-family: Open Sans;
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1;
-      color: #fff;
-    }
-  }
-}
-
 .about {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  padding: 4.5rem;
+  grid-template-columns: 1fr;
+  padding-inline: 1rem;
+  margin-bottom: 2.5rem;
+  gap: 1.5rem;
+  /* padding: 4.5rem; */
 
   .about-txt {
     /* max-width: 781px; */
     h3 {
       /* margin-top: 7.06rem; */
       color: #fff;
-      font-size: 3.25rem;
-      margin-bottom: 1.5rem;
+      font-size: clamp(1.45rem, -0.607rem + 4.286vw, 3.65rem);
+      font-family: open sans;
       font-weight: 700;
       line-height: normal;
-      font-style: normal;
       font-family: Open Sans;
+      margin-bottom: 24px;
     }
     h5 {
       color: #FFF;
       font-family: Open Sans;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       margin-bottom: 1.2rem;
     }
     p {
@@ -415,19 +297,59 @@ h1 {
       font-weight: 400;
       line-height: 27.756px;
       letter-spacing: 0.63px;
-      font-size: 1.125rem;
+      font-size: 1rem;
     }
     .read-more {
       display: flex;
       justify-content: center;
       align-items: center;
       background: #C41A26;
-      padding: 0.875rem 2.06rem;
+      padding: 0.875rem 1.75rem;
       color: #fff;
-      font-size: 1.125rem;
+      font-size: 1rem;
       border: none;
       cursor: pointer;
     }
+  }
+
+  .about-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-inline: auto;
+    border: 1px solid magenta;
+  }
+}
+.r-img {
+
+}
+
+.vibrate {
+    animation: vibrate 1.5s alternate-reverse ease-in-out infinite;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  60% {
+    transform: translateX(5px);
+  }
+  70% {
+    transform: translateX(-5px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+  90% {
+    transforn: translateX(-5px);
+  }
+  100% {
+    transform: translateX(-10px);
   }
 }
 
@@ -788,6 +710,21 @@ h1 {
   .client-inner {
     flex-wrap: wrap;
     gap: 2rem;
+  }
+}
+
+@media (min-width: 788px) {
+  .about {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    .about-txt h5 {
+      font-size: 1.5rem;
+    }
+
+    .about-txt p {
+      font-size: 1.125rem;
+    }
   }
 }
 

@@ -58,14 +58,15 @@
 }
 .cta {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 22px;
-    /* padding: 11px 30px; */
-    background-color: #d3382f;
-    border: none;
-    cursor: pointer;
-    width: fit-content;
+      justify-content: center;
+      align-items: center;
+      background: #C41A26;
+      padding: 0.875rem 1.75rem;
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      width: fit-content;
     margin-bottom: 14px;
 }
 
