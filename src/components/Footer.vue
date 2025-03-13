@@ -1,6 +1,6 @@
 <template>
-    <footer class="footer wrapper">
-        <section class="footer-sec">
+    <footer class="footer">
+        <section class="footer-sec wrapper">
             <a href="#" class="logo">
                 <img src="../assets/Subtract.png" alt="Logo">
             </a>
@@ -30,7 +30,7 @@
 </template>
 
 <style lang="css" scoped>
-    .footer {
+.footer {
         background-color: #0e0d0d;
     }
 .wrapper {

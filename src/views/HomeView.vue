@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import HeroSection from '@/components/HeroSection.vue';
 import Services from '@/components/Services.vue';
+import Contact from '@/components/Contact.vue'
 </script>
 
 <template>
   <main>
-    <HeroSection />
+    <HeroSection /> <!--hero section inported component-->
     <section class="client">
       <ul class="client-inner">
         <li>Behance</li>
@@ -15,7 +16,7 @@ import Services from '@/components/Services.vue';
         <li>Facebook</li>
       </ul>
     </section>
-    <Services />
+    <Services /> <!--services section inported component-->
     <section class="about wrapper">
       <div class="about-txt">
         <h3>About Me</h3>
@@ -172,15 +173,7 @@ import Services from '@/components/Services.vue';
         </article>
       </div>
     </section>
-    <section class="contact">
-      <div class="contact-left">
-        <h3>Ready to bring your ideas to life?</h3>
-        <p>Let's connect and make it happen.</p>
-      </div>
-      <form class="contact-form">
-        <h3>Send Us A Message</h3>
-      </form>
-    </section>
+    <Contact /> <!--contact section inported component-->
   </main>
 </template>
 
