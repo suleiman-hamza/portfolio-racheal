@@ -20,9 +20,11 @@ import Contact from '@/components/Contact.vue'
     <section class="about wrapper">
       <div class="about-txt">
         <h3>About Me</h3>
-        <h5>I'm Racheal Alogbe, a dedicated and passionate Product Designer hailing from the vibrant city of Port Harcourt, Nigeria</h5>
-        <p>My journey in the world of design started with a curiosity to understand how things work and a relentless desire to make them work better. With a background in Petroleum Engineering, I've cultivated a profound appreciation for the intersection of technology, human behaviour and aesthetics. Read More</p>
-        <button class="read-more">Read More</button>
+        <h5>I'm Rachael Alogbe, a dedicated and passionate Product Designer
+          hailing from the vibrant city of Port Harcourt, Nigeria.</h5>
+          
+          <p>My journey in the world of design started with a curiosity to understand how things work and a relentless desire to make them work better. With a background in Petroleum Engineering, I've cultivated a profound appreciation for the intersection of technology, human behavior, and aesthetics. Read more</p>
+        <button class="read-more">Download Resume</button>
       </div>
       <div class="about-svg">
         <img src="../assets/Subtract.png" alt="racheal png logo" width="200px" height="200px" class="r-img vibrate">
