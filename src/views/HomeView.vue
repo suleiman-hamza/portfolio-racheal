@@ -687,6 +687,11 @@ import Contact from '@/components/Contact.vue'
       gap: 0;
       justify-content: space-between;
       
+      div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 1rem;
+      }
       > span > img {
         border: 2px solid red;
         height: 170px;
