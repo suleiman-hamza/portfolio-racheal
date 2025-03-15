@@ -2,6 +2,7 @@
 import HeroSection from '@/components/HeroSection.vue';
 import Services from '@/components/Services.vue';
 import Contact from '@/components/Contact.vue'
+import Skills from '@/components/Skills.vue';
 </script>
 
 <template>
@@ -30,45 +31,7 @@ import Contact from '@/components/Contact.vue'
         <img src="../assets/Subtract.png" alt="racheal png logo" width="200px" height="200px" class="r-img vibrate">
       </div>
     </section>
-    <section class="skills">
-      <span>
-        <hr class="line"></hr>
-        <h5>Skills & Tools</h5>
-      </span>
-      <h2>What I Can Do</h2>
-      <div class="ski-tool">
-        <div class="cat-skills">
-          <span>
-            <img src="../assets/images/Skills-png.png" alt="skills icon">
-          </span>
-          <div>
-            <h6>Visual design</h6>
-            <h6>User Research</h6>
-            <h6>Usability Studies</h6>
-            <h6>Wireframing</h6>
-            <h6>Informaion Architecture</h6>
-            <h6>Rapid Prototyping</h6>
-            <h6>Collaboration</h6>
-            <h6>Problem Solving</h6>
-            <h6>Leadership</h6>
-            <h6>Communication</h6>
-          </div>  
-          </div>
-        <div class="cat-tools">
-          <span>
-            <img src="../assets/images/Tools-png.png" alt="tools icon">
-          </span>
-          <div>
-            <h6>Figma</h6>
-            <h6>Zeplin</h6>
-            <h6>Mirror</h6>
-            <h6>Figmotion</h6>
-            <h6>Maza</h6>
-            <h6>Notion</h6>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Skills />
     <section class="featured">
       <span>
         <hr class="line">
@@ -175,8 +138,8 @@ import Contact from '@/components/Contact.vue'
   }
 }
 .client {
-  border-bottom: 1px solid #3a3a3a;
-  border-top: 1px solid #3a3a3a;
+  border-bottom: 1px solid rgba(11, 11, 11, 0.20);
+  border-top: 1px solid rgba(11, 11, 11, 0.20);
   padding: 24px;
   display: flex;
   align-items: center;
@@ -252,9 +215,6 @@ import Contact from '@/components/Contact.vue'
     /* border: 1px solid magenta; */
   }
 }
-.r-img {
-
-}
 
 .vibrate {
     animation: vibrate 1.5s alternate-reverse ease-in-out infinite;
@@ -284,85 +244,6 @@ import Contact from '@/components/Contact.vue'
   }
 }
 
-.skills {
-  border: 1px solid gold;
-  padding: 1rem;
-  background-color: #fff6f5;
-
-  > span {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    .line {
-      width: 147px;
-      height: 2px;
-      background-color: #D3382F;
-      border: none;
-    }
-    h5 {
-      font-size: 1.125rem;
-      letter-spacing: 0.63px;
-      line-height: 27.756px;
-      font-weight: 400;
-      color: #3a3a3a;
-    }
-  }
-
-  > h2 {
-    font-weight: 700;
-    line-height: normal;
-    font-size: 3.5rem;
-    font-family: "Open Sans";
-    margin-bottom: 52px;
-    color: #111;
-  }
-
-  .ski-tool {
-    /* display: flex;
-    gap: 42px; */
-    border: 1px solid red;
-    
-    .cat-skills, .cat-tools {
-      display: flex;
-      gap: 1rem;
-      max-width: 400px;
-      margin-inline: auto;
-      margin-bottom: 1rem;
-      > span {
-        margin-inline: auto;
-        display: inline-block;
-        border: 1px solid hotpink;
-        
-        img {
-          width: 100px;
-          height: 100px;
-          display: block;
-        }
-      }
-
-      > div {
-        border: 1px solid royalblue;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0.75rem;
-        gap: 0.5rem;
-        background-color: #ffffff;
-        justify-content: center;
-        /* display: grid;
-        grid-template-columns: 1fr;
-        row-gap: 1.5rem; */
-        h6 {
-          color: #111;
-          padding: 0.25rem;
-          font-size: 18px;
-          /* color: #fff; */
-          font-weight: 400;
-          font-family: "Open Sans";
-        }
-      }
-    }
-  }
-}
 .qualification {
   padding: 100px 72px;
   border: 1px solid yellowgreen;
@@ -675,28 +556,6 @@ import Contact from '@/components/Contact.vue'
 
     .about-txt p {
       font-size: 1.125rem;
-    }
-  }
-
-  .ski-tool {
-    display: flex;
-    gap: 42px;
-
-    .cat-skills, .cat-tools {
-      width: 100%;
-      gap: 0;
-      justify-content: space-between;
-      
-      div {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        row-gap: 1rem;
-      }
-      > span > img {
-        border: 2px solid red;
-        height: 170px;
-        width: 170px;
-      }
     }
   }
 }

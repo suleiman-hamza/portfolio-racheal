@@ -106,7 +106,8 @@
     margin-inline: auto;
     border: 1px solid #DEDEDE;
     color: #3A3A3A;
-
+    transition: all 200ms ease-in;
+    
     h4 {
       font-size: 24px;
       font-family: "Open Sans";
@@ -122,6 +123,23 @@
       font-weight: 400;
       line-height: 146.2%; /* 26.316px */
     }
+  }
+  
+  :is(.app, .brand, .web):hover {
+  transition: all 200ms ease-in;
+  border: 1px solid #d3382f;
+  
+  .services-icon {
+    transition: all 200ms ease-in;
+    background-color: #D3382F;
+    
+    svg {
+      transition: all 200ms ease-in;
+      stroke: #fff;
+      fill: #fff;
+      stroke-width: 2px;
+    }
+  }
 }
 .services-body {
     display: grid;
