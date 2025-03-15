@@ -49,14 +49,22 @@
   background-color: #ffe517;
   /* padding: 20px; */
   text-align: left;
-  padding: 170px 40px 85px 60px;
+  padding: 150px 40px 85px 70px;
+  position: relative;
   /* border-radius: 10px; */
+}
+.yellow-card::after {
+    content: url('../assets/images/SuperToroid-Black-Matte.png');
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .yellow-card h4 {
   margin: 0;
   font-size: 42px;
   line-height: 1.4;
+  font-weight: 700;
   color: #000;
 }
 
