@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection.vue';
 import Services from '@/components/Services.vue';
 import Contact from '@/components/Contact.vue'
 import Skills from '@/components/Skills.vue';
+import Customer from '@/components/Customer.vue'
 </script>
 
 <template>
@@ -59,41 +60,7 @@ import Skills from '@/components/Skills.vue';
         </a>
       </div>
     </section>
-    <section class="customer">
-      <div class="yellow-card">
-        <h4>
-          80+
-          <br>Satisfied 
-          <br>Customers
-        </h4>
-      </div>
-      <div class="testimony">
-        <article>
-          <div class="client-title">
-            <span class="replace-img">
-              <!-- <img src="" alt="bike shop"> -->
-            </span>
-            <span>
-              <h5>Floyd Miles</h5>
-              <h6>Vice President, GoPro</h6>
-            </span>
-          </div>
-          <p>"I had the pleasure of working with Rachael, and I'm thrilled with the results. Her keen eye for detail and dedication to understanding our brand's essence resulted in a beautifully redesigned website. Rachael exceeded our expectations.”</p>
-        </article>
-        <article>
-          <div class="client-title">
-            <span class="replace-img">
-              <!-- <img src="" alt="bike shop"> -->
-            </span>
-            <span>
-              <h5>Floyd Miles</h5>
-              <h6>Vice President, GoPro</h6>
-            </span>
-          </div>
-          <p>"I had the pleasure of working with Rachael, and I'm thrilled with the results. Her keen eye for detail and dedication to understanding our brand's essence resulted in a beautifully redesigned website. Rachael exceeded our expectations.”</p>
-        </article>
-      </div>
-    </section>
+    <Customer />
     <Contact /> <!--contact section inported component-->
   </main>
 </template>
@@ -353,12 +320,11 @@ import Skills from '@/components/Skills.vue';
 }
 
 .featured {
-  padding: 100px 72px;
-  border: 1px solid magenta;
+  padding: 1rem;
 
   h2 {
-    color: #FFF;
-    font-size: 3.25rem;
+    color: #1e1e1e;
+    font-size: clamp(1.45rem, -0.607rem + 4.286vw, 3.65rem);
     font-weight: 700;
     font-family: "Open Sans";
     line-height: normal;
@@ -373,9 +339,11 @@ import Skills from '@/components/Skills.vue';
     .line {
       width: 147px;
       height: 2px;
+      background-color: #D3382F;
+      border: none;
     }
     h5 {
-      color: #FFF;
+      color: #3a3a3a;
       font-family: "Source Sans Pro";
       font-size: 18px;
       font-style: normal;
@@ -388,7 +356,7 @@ import Skills from '@/components/Skills.vue';
 
   .ft-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 24px;
 
     a {
@@ -408,7 +376,7 @@ import Skills from '@/components/Skills.vue';
   }
 }
 
-.customer {
+/* .customer {
   display: grid;
   grid-template-columns: 1fr 2fr;
 
@@ -419,9 +387,7 @@ import Skills from '@/components/Skills.vue';
 
     h4 {
       color: #000;
-      /* width: 289px; */
 
-      /* P/H2 */
       font-family: "Open Sans";
       font-size: 52px;
       font-style: normal;
@@ -460,7 +426,7 @@ import Skills from '@/components/Skills.vue';
           font-size: 23.675px;
           font-style: normal;
           font-weight: 700;
-          line-height: 36.828px; /* 155.556% */
+          line-height: 36.828px;
         }
 
         h6 {
@@ -470,7 +436,7 @@ import Skills from '@/components/Skills.vue';
           font-size: 18.414px;
           font-style: normal;
           font-weight: 400;
-          line-height: 26.306px; /* 142.857% */
+          line-height: 26.306px;
         }
       }
 
@@ -488,11 +454,11 @@ import Skills from '@/components/Skills.vue';
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
-        line-height: 26.828px; /* 167.399% */
+        line-height: 26.828px;
       }
     }
   }
-}
+} */
 
 .contact {
   background-color: #191919;

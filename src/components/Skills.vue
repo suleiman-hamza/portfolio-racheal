@@ -67,7 +67,7 @@ h5 {
 h2 {
     font-weight: 700;
     line-height: normal;
-    font-size: 3.5rem;
+    font-size: clamp(1.45rem, -0.607rem + 4.286vw, 3.65rem);
     font-family: "Open Sans";
     margin-bottom: 52px;
     color: #111;
