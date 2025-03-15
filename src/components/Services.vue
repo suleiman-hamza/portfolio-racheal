@@ -5,24 +5,24 @@
 <template>
     <section class="services wrapper">
       <div class="services-head">
-        <h3>The Services I Provide</h3>
+        <h3>The <span class="ser">Services</span> I Provide</h3>
         <span>30+ Projects Completed</span>
       </div> 
       <div class="services-body">
         <div class="web">
           <span class="services-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-  <path d="M9 6C9 4.4087 9.63214 2.88258 10.7574 1.75736C11.8826 0.632141 13.4087 0 15 0L33 0C34.5913 0 36.1174 0.632141 37.2426 1.75736C38.3679 2.88258 39 4.4087 39 6V42C39 43.5913 38.3679 45.1174 37.2426 46.2426C36.1174 47.3679 34.5913 48 33 48H15C13.4087 48 11.8826 47.3679 10.7574 46.2426C9.63214 45.1174 9 43.5913 9 42V6ZM27 39C27 38.2043 26.6839 37.4413 26.1213 36.8787C25.5587 36.3161 24.7956 36 24 36C23.2044 36 22.4413 36.3161 21.8787 36.8787C21.3161 37.4413 21 38.2043 21 39C21 39.7957 21.3161 40.5587 21.8787 41.1213C22.4413 41.6839 23.2044 42 24 42C24.7956 42 25.5587 41.6839 26.1213 41.1213C26.6839 40.5587 27 39.7957 27 39Z" fill="#D3382F"/>
-</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 48 48" fill="none">
+              <path d="M40 36C42.2 36 43.98 34.2 43.98 32L44 12C44 9.8 42.2 8 40 8H8C5.8 8 4 9.8 4 12V32C4 34.2 5.8 36 8 36H0V40H48V36H40ZM8 12H40V32H8V12Z" fill="#D3382F"/>
+            </svg>
           </span>
           <h4>Website Design</h4>
           <p>Crafting engaging web eexperiences is at the heart of my expertise. I emplot modern web design principles, ensuring seamless navigation and aesthetic appeal. My process includes responsive design for cross-device compactibility and a strong emphasis on user-centric design.</p>
         </div>
         <div class="app">
           <span class="services-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-  <path d="M40 36C42.2 36 43.98 34.2 43.98 32L44 12C44 9.8 42.2 8 40 8H8C5.8 8 4 9.8 4 12V32C4 34.2 5.8 36 8 36H0V40H48V36H40ZM8 12H40V32H8V12Z" fill="#D3382F"/>
-</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 48 48" fill="none">
+              <path d="M9 6C9 4.4087 9.63214 2.88258 10.7574 1.75736C11.8826 0.632141 13.4087 0 15 0L33 0C34.5913 0 36.1174 0.632141 37.2426 1.75736C38.3679 2.88258 39 4.4087 39 6V42C39 43.5913 38.3679 45.1174 37.2426 46.2426C36.1174 47.3679 34.5913 48 33 48H15C13.4087 48 11.8826 47.3679 10.7574 46.2426C9.63214 45.1174 9 43.5913 9 42V6ZM27 39C27 38.2043 26.6839 37.4413 26.1213 36.8787C25.5587 36.3161 24.7956 36 24 36C23.2044 36 22.4413 36.3161 21.8787 36.8787C21.3161 37.4413 21 38.2043 21 39C21 39.7957 21.3161 40.5587 21.8787 41.1213C22.4413 41.6839 23.2044 42 24 42C24.7956 42 25.5587 41.6839 26.1213 41.1213C26.6839 40.5587 27 39.7957 27 39Z" fill="#D3382F"/>
+            </svg>
           </span>
           <h4>App Design</h4>
           <p>I specialize in creating captivating and user-friendly mobile app designs. With a keen focus on user experience (UX) and user interface (UI) design, my approach involves in-depth user research, wireframing, and rapid prototyping to bring innovative app concepts to life.</p>
@@ -58,18 +58,24 @@
 </template>
 
 <style scoped>
+.ser {
+  color: #D3382F;
+}
 .services {
     /* border: 1px solid magenta; */
     margin-bottom: 2.5rem;
+    padding-inline: 1rem;
+    background-color: #fff;
+    color: #111;
 }
 .services-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 3rem;
+    color: #111;
 }
 .services-head > h3 {
-    color: #fff;
     font-size: clamp(1.45rem, -0.607rem + 4.286vw, 3.65rem);
     font-family: open sans;
     font-weight: 700;
@@ -81,15 +87,41 @@
       font-weight: 700;
       line-height: normal;
 }
+.services-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid #d3382f;
+  padding: 18px;
+}
 .app, .web, .brand {
     display: flex;
     flex-direction: column;
     gap: 14px;
     padding: 1rem;
-    background-color: #1e1e1e;
+    background-color: #fff;
     min-width: 300px;
     max-width: 400px;
     margin-inline: auto;
+    border: 1px solid #DEDEDE;
+    color: #3A3A3A;
+
+    h4 {
+      font-size: 24px;
+      font-family: "Open Sans";
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    p {
+      color: #3A3A3A;
+      font-family: "Source Sans Pro";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 146.2%; /* 26.316px */
+    }
 }
 .services-body {
     display: grid;

@@ -22,7 +22,7 @@ import Contact from '@/components/Contact.vue'
         <h3>About Me</h3>
         <h5>I'm Rachael Alogbe, a dedicated and passionate Product Designer
           hailing from the vibrant city of Port Harcourt, Nigeria.</h5>
-          
+
           <p>My journey in the world of design started with a curiosity to understand how things work and a relentless desire to make them work better. With a background in Petroleum Engineering, I've cultivated a profound appreciation for the intersection of technology, human behavior, and aesthetics. Read more</p>
         <button class="read-more">Download Resume</button>
       </div>
@@ -38,8 +38,9 @@ import Contact from '@/components/Contact.vue'
       <h2>What I Can Do</h2>
       <div class="ski-tool">
         <div class="cat-skills">
-          <span></span>
-            <!-- <img src="" alt=""> -->
+          <span>
+            <img src="../assets/images/Skills-png.png" alt="skills icon">
+          </span>
           <div>
             <h6>Visual design</h6>
             <h6>User Research</h6>
@@ -54,7 +55,9 @@ import Contact from '@/components/Contact.vue'
           </div>  
           </div>
         <div class="cat-tools">
-          <span></span>
+          <span>
+            <img src="../assets/images/Tools-png.png" alt="tools icon">
+          </span>
           <div>
             <h6>Figma</h6>
             <h6>Zeplin</h6>
@@ -65,53 +68,6 @@ import Contact from '@/components/Contact.vue'
           </div>
         </div>
       </div>
-    </section>
-    <section class="qualification">
-      <span>
-        <hr class="line"></hr>
-        <h5>Experience and Education</h5>
-      </span>
-      <h2>Qualification</h2>
-      <section class="ed-xp">
-        <div class="xperience">
-          <h4>Experience</h4>
-          <div class="xp-list">
-            <div class="xp-1">
-              <span class="xp-work">
-                <h5>Product Designer</h5>
-                <h6>Muzzlab</h6>
-              </span>
-              <h6 class="xp-duration">January 2023 - Present</h6>
-            </div>
-            <div class="xp-1">
-              <span class="xp-work">
-                <h5>Women Techsters Fellow</h5>
-                <h6>WTFP-Tech4Dev</h6>
-              </span>
-              <h6 class="xp-duration">August 2022 - April 2023</h6>
-            </div>
-            <div class="xp-1">
-              <span class="xp-work">
-                <h5>Product Design Intern</h5>
-                <h6>Zuri Intership</h6>
-              </span>
-              <h6 class="xp-duration">May 2022 - August 2022</h6>
-            </div>
-          </div>
-        </div>
-        <div class="education">
-          <h4>Education</h4>
-          <div class="ed-list">
-            <div class="ed-1">
-              <span class="ed-work">
-                <h5>Product Designer</h5>
-                <h6>Muzzlab</h6>
-              </span>
-              <h6 class="ed-duration">January 2023 - Present</h6>
-            </div>
-          </div>
-        </div>
-      </section>
     </section>
     <section class="featured">
       <span>
@@ -219,12 +175,14 @@ import Contact from '@/components/Contact.vue'
   }
 }
 .client {
-  border-bottom: 1px solid grey;
-  border-top: 1px solid grey;
+  border-bottom: 1px solid #3a3a3a;
+  border-top: 1px solid #3a3a3a;
   padding: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
+  color: #3A3A3A;
 }
 .client-inner {
   display: flex;
@@ -242,13 +200,14 @@ import Contact from '@/components/Contact.vue'
   padding-inline: 1rem;
   margin-bottom: 2.5rem;
   gap: 1.5rem;
+  background-color: #fff;
   /* padding: 4.5rem; */
 
   .about-txt {
     /* max-width: 781px; */
     h3 {
       /* margin-top: 7.06rem; */
-      color: #fff;
+      color: #111;
       font-size: clamp(1.45rem, -0.607rem + 4.286vw, 3.65rem);
       font-family: open sans;
       font-weight: 700;
@@ -257,14 +216,14 @@ import Contact from '@/components/Contact.vue'
       margin-bottom: 24px;
     }
     h5 {
-      color: #FFF;
+      color: #111;
       font-family: Open Sans;
       font-size: 1.25rem;
       margin-bottom: 1.2rem;
     }
     p {
       margin-bottom: 1.5rem;
-      color: #fff;
+      color: #111;
       font-family: "Source Sans Pro";
       font-weight: 400;
       line-height: 27.756px;
@@ -290,7 +249,7 @@ import Contact from '@/components/Contact.vue'
     justify-content: center;
     width: 100%;
     margin-inline: auto;
-    border: 1px solid magenta;
+    /* border: 1px solid magenta; */
   }
 }
 .r-img {
@@ -327,7 +286,8 @@ import Contact from '@/components/Contact.vue'
 
 .skills {
   border: 1px solid gold;
-  padding: 100px 72px;
+  padding: 1rem;
+  background-color: #fff6f5;
 
   > span {
     display: flex;
@@ -336,13 +296,15 @@ import Contact from '@/components/Contact.vue'
     .line {
       width: 147px;
       height: 2px;
+      background-color: #D3382F;
+      border: none;
     }
     h5 {
-      color: #3a3a3a;
       font-size: 1.125rem;
       letter-spacing: 0.63px;
       line-height: 27.756px;
       font-weight: 400;
+      color: #3a3a3a;
     }
   }
 
@@ -352,32 +314,48 @@ import Contact from '@/components/Contact.vue'
     font-size: 3.5rem;
     font-family: "Open Sans";
     margin-bottom: 52px;
+    color: #111;
   }
 
   .ski-tool {
-    display: flex;
-    gap: 42px;
+    /* display: flex;
+    gap: 42px; */
     border: 1px solid red;
-
+    
     .cat-skills, .cat-tools {
       display: flex;
-      justify-content: space-between;
       gap: 1rem;
+      max-width: 400px;
+      margin-inline: auto;
+      margin-bottom: 1rem;
       > span {
-        width: 174px;
-        height: 174px;
+        margin-inline: auto;
         display: inline-block;
         border: 1px solid hotpink;
+        
+        img {
+          width: 100px;
+          height: 100px;
+          display: block;
+        }
       }
 
       > div {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        row-gap: 1.5rem;
+        border: 1px solid royalblue;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0.75rem;
+        gap: 0.5rem;
+        background-color: #ffffff;
+        justify-content: center;
+        /* display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1.5rem; */
         h6 {
-          padding: 0.5rem;
+          color: #111;
+          padding: 0.25rem;
           font-size: 18px;
-          color: #fff;
+          /* color: #fff; */
           font-weight: 400;
           font-family: "Open Sans";
         }
@@ -397,6 +375,7 @@ import Contact from '@/components/Contact.vue'
     .line {
       width: 147px;
       height: 2px;
+      background: #D3382F;
     }
     h5 {
       color: #FFF;
@@ -698,8 +677,24 @@ import Contact from '@/components/Contact.vue'
       font-size: 1.125rem;
     }
   }
-}
 
+  .ski-tool {
+    display: flex;
+    gap: 42px;
+
+    .cat-skills, .cat-tools {
+      width: 100%;
+      gap: 0;
+      justify-content: space-between;
+      
+      > span > img {
+        border: 2px solid red;
+        height: 170px;
+        width: 170px;
+      }
+    }
+  }
+}
 /* responsive stuff for mobile*/
 /* @media (max-width: 788px) {
   .hero-section {

@@ -73,7 +73,7 @@
 
 <style lang="css" scoped>
 .footer {
-        background-color: #0e0d0d;
+        background-color: #fbe1df;
     }
 .wrapper {
     padding-block: 1.2rem;
@@ -99,10 +99,13 @@
     width: 40px;
 }
 .icons {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     width: 34px;
     height: 34px;
-    border: 1px solid white;
+    background-color: #ffffff;
 }
 .other-ft > ul {
     display: flex;
@@ -113,14 +116,16 @@
     margin-bottom: 1rem;
 
     li {
-        font-size: 18px;
+        font-size: 16px;
         font-family: "Source Sans Pro";
         font-weight: 400;
-        color: #fff;
+        color: #1e1e1e;
     }
 }
 .other-ft > hr {
-    border: 1px solid grey;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(11, 11, 11, 0.20);
 }
 
 .group {
@@ -137,12 +142,13 @@
 .group-right p {
     font-size: 1rem;
     font-weight: 400;
+    color: #1e1e1e;
 }
 
 
 @media (min-width: 765px) {
     .footer-sec {
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 1fr 5fr;
         grid-template-rows: auto;
         align-items: center;
     }
@@ -150,7 +156,7 @@
         margin-bottom: 0;
     }
     .logo img {
-        width: 100px;
+        width: 70px;
     }
     .other-ft > ul {
         flex-direction: row;

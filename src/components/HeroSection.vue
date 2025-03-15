@@ -29,6 +29,8 @@
     grid-template-rows: auto auto;
     overflow: hidden;
     margin-top: 3.5rem;
+    background: #FFF5F4;
+    padding-inline: 1rem;
     /* border: 1px solid red; */
 }
 .hero-text {
@@ -45,11 +47,12 @@
     letter-spacing: 1.28px;
 }
 .role {
-    color: #fff;
+    color: #111111;
     font-size: 2rem;/*72px;*/
     font-weight: 700;
 }
 .role-desc {
+    color: #111111;
     font-size: 1rem;
     line-height: 24px;
     /* font-weight: 600; */
