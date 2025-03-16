@@ -86,6 +86,7 @@
       font-size: 1rem;
       font-weight: 700;
       line-height: normal;
+      text-align: end;
 }
 .services-icon {
   display: flex;
