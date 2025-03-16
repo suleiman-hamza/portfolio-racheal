@@ -460,50 +460,6 @@ import Customer from '@/components/Customer.vue'
   }
 } */
 
-.contact {
-  background-color: #191919;
-
-  .contact-left {
-
-    h3 {
-      color: #FFF;
-
-      /* P/H2 */
-      font-family: "Open Sans";
-      font-size: 52px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-          }
-
-    p {
-      color: #FFF;
-      font-family: "Source Sans Pro";
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 154.2%; /* 27.756px */
-      letter-spacing: 0.9px;
-    }
-  }
-
-  .contact-form {
-    background-color: #0E0D0D;
-
-    h3 {
-      color: #FFF;
-      /* P/H3 */
-      font-family: "Open Sans";
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-    }
-  }
-}
-
-
-
 @media (max-width: 788px) {
   .client-inner {
     flex-wrap: wrap;
