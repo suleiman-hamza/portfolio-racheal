@@ -1,11 +1,18 @@
 <script setup lang="ts">
+import { onClickOutside } from '@vueuse/core'
 import { ref } from 'vue';
+
+const target = ref(null);
 
 const isMenuOpen = ref(false);
 function openMenu() {
     isMenuOpen.value = !isMenuOpen.value
     console.log(isMenuOpen.value)
 }
+onClickOutside(target, (event) => {
+    isMenuOpen.value = false
+})
+
 </script>
 
 <template>
@@ -20,15 +27,14 @@ function openMenu() {
             <li><RouterLink to="/resume">Resume</RouterLink></li>
             <li><RouterLink to="/contact">Contact us</RouterLink></li>
         </ul>
-        <div class="hamburger">
+        <div class="hamburger" ref="target">
             <button @click="openMenu">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20px" height="20px">
                 <path fill-rule="evenodd" d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-</svg>
-
+</svg> -->
             </button>
             <div :class="['hamburger-menu', { show: isMenuOpen }]" v-show="isMenuOpen === true">
                 <ul class="nav-menu-list">
