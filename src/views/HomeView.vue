@@ -180,6 +180,10 @@ import Customer from '@/components/Customer.vue'
     width: 100%;
     margin-inline: auto;
     /* border: 1px solid magenta; */
+
+    img {
+      opacity: 0.4;
+    }
   }
 }
 
