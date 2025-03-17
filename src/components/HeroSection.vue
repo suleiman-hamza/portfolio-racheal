@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import VueTypewriterEffect from "vue-typewriter-effect";
-
+import TypingAnimation from '@/components/TypingAnimation.vue'
 </script>
+
 <template>
     <section class="hero-section-container wrapper">
         <div class="hero-text">
             <h4 class="hi">Hi, I'm Racheal</h4>
-            <VueTypewriterEffect :strings="['Product Designer']" class="role"/>
+            <!-- <h1 class="role">Product Designer</h1> -->
+            <TypingAnimation text="Product Designer" class="role text-left text-<2rem>/[<1.3>]"/>
             <p class="role-desc">Dedicated to Crafting Intuitive and User-Centric Design Solutions. Currently, I am based in Port Harcourt City Nigeria</p>
             <button class="cta">View My Works</button>
         </div>
