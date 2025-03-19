@@ -44,7 +44,7 @@ onMounted(()=> {
     <section class="services wrapper">
       <div class="services-head">
         <h3>The <span class="ser">Services</span> I Provide</h3>
-        <span class="translate-x-full opacity-0" :class="{ 'is-thirtvisible': isherimg }" ref="thirt">30+ Projects Completed</span>
+        <span class="translate-x-2 opacity-0" :class="{ 'is-thirtvisible': isherimg }" ref="thirt">30+ Projects Completed</span>
       </div> 
       <div class="services-body">
         <div class="web opacity-0 translate-y-10" :class="{ 'is-webvisible': isherimg }" ref="website">
@@ -104,7 +104,7 @@ onMounted(()=> {
 .is-thirtvisible {
     opacity: 1;
     transform: translateX(0);
-    transition: opacity 2s ease-in-out, transform 2s ease-in;
+    transition: opacity 1s ease-in-out, transform 1s ease-in;
 }
 .ser {
   color: #D3382F;
