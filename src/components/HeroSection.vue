@@ -1,5 +1,38 @@
 <script setup lang="ts">
-import TypingAnimation from '@/components/TypingAnimation.vue'
+import { onMounted, shallowRef, useTemplateRef , ref} from 'vue';
+import type { Ref } from 'vue';
+import TypingAnimation from '@/components/TypingAnimation.vue';
+import { useIntersectionObserver } from '@vueuse/core';
+
+const herimg = ref<HTMLElement | null>(null);
+const website = ref<HTMLElement | null>(null);
+const isherimg = ref(false);
+
+
+
+const addIntersectionObserver = (
+    element: Ref<HTMLElement | null>, animationClass: string, threshold: number
+) => {
+    useIntersectionObserver(
+        element,
+        ([entry], observer) => {
+            console.log("IntersectionObserver triggered:", entry.isIntersecting);
+            if (entry.isIntersecting) {
+                entry.target.classList.add(animationClass);
+                observer.disconnect();
+            } else {
+                entry.target.classList.remove(animationClass);
+            }
+        },
+        {
+            threshold
+        }
+    )
+}
+onMounted(()=> {
+    addIntersectionObserver(herimg, "is-visible", 0.4);
+    addIntersectionObserver(website, "is-webvisible", 0.4);
+})
 </script>
 
 <template>
@@ -12,7 +45,7 @@ import TypingAnimation from '@/components/TypingAnimation.vue'
             <button class="cta">View My Works</button>
         </div>
         <div class="hero-img">
-            <img src="../assets/images/Rectangle 3.png" alt="racheal's photo" class="img-2">
+            <img src="../assets/images/Rectangle 3.png" alt="racheal's photo" class="img-2 opacity-0 translate-y-10" :class="{ 'is-visible': isherimg }" ref="herimg">
             <img src="../assets/images/Property 1=Variant2 (1).png" alt="variant 2" class="anim blink">
             <img src="../assets/images/Property 1=Variant4.png" alt="variant 4" class="img">
         </div>
@@ -24,6 +57,12 @@ import TypingAnimation from '@/components/TypingAnimation.vue'
     padding-block: 1.2rem;
     max-width: 1186px;
     margin-inline: auto;
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 .hero-section-container {
     height: 100vh;

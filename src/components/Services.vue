@@ -1,4 +1,42 @@
 <script setup lang="ts">
+import { onMounted, shallowRef, useTemplateRef , ref} from 'vue';
+import type { Ref } from 'vue';
+// import TypingAnimation from '@/components/TypingAnimation.vue';
+import { useIntersectionObserver } from '@vueuse/core';
+
+const website = ref<HTMLElement | null>(null);
+const app = ref<HTMLElement | null>(null);
+const brand = ref<HTMLElement | null>(null);
+const thirt = ref<HTMLElement | null>(null);
+const isherimg = ref(false);
+
+
+
+const addIntersectionObserver = (
+    element: Ref<HTMLElement | null>, animationClass: string, threshold: number
+) => {
+    useIntersectionObserver(
+        element,
+        ([entry], observer) => {
+            console.log("IntersectionObserver triggered:", entry.isIntersecting);
+            if (entry.isIntersecting) {
+                entry.target.classList.add(animationClass);
+                observer.disconnect();
+            } else {
+                entry.target.classList.remove(animationClass);
+            }
+        },
+        {
+            threshold
+        }
+    )
+}
+onMounted(()=> {
+    addIntersectionObserver(website, "is-webvisible", 0.4);
+    addIntersectionObserver(app, "is-webvisible", 0.4);
+    addIntersectionObserver(brand, "is-webvisible", 0.4);
+    addIntersectionObserver(thirt, "is-thirtvisible", 0.4);
+})
 
 </script>
 
@@ -6,10 +44,10 @@
     <section class="services wrapper">
       <div class="services-head">
         <h3>The <span class="ser">Services</span> I Provide</h3>
-        <span>30+ Projects Completed</span>
+        <span class="translate-x-full opacity-0" :class="{ 'is-thirtvisible': isherimg }" ref="thirt">30+ Projects Completed</span>
       </div> 
       <div class="services-body">
-        <div class="web">
+        <div class="web opacity-0 translate-y-10" :class="{ 'is-webvisible': isherimg }" ref="website">
           <span class="services-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 48 48" fill="none">
               <path d="M40 36C42.2 36 43.98 34.2 43.98 32L44 12C44 9.8 42.2 8 40 8H8C5.8 8 4 9.8 4 12V32C4 34.2 5.8 36 8 36H0V40H48V36H40ZM8 12H40V32H8V12Z" fill="#D3382F"/>
@@ -18,7 +56,7 @@
           <h4>Website Design</h4>
           <p>Crafting engaging web eexperiences is at the heart of my expertise. I emplot modern web design principles, ensuring seamless navigation and aesthetic appeal. My process includes responsive design for cross-device compactibility and a strong emphasis on user-centric design.</p>
         </div>
-        <div class="app">
+        <div class="app opacity-0 translate-y-10" :class="{ 'is-webvisible': isherimg }" ref="app">
           <span class="services-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 48 48" fill="none">
               <path d="M9 6C9 4.4087 9.63214 2.88258 10.7574 1.75736C11.8826 0.632141 13.4087 0 15 0L33 0C34.5913 0 36.1174 0.632141 37.2426 1.75736C38.3679 2.88258 39 4.4087 39 6V42C39 43.5913 38.3679 45.1174 37.2426 46.2426C36.1174 47.3679 34.5913 48 33 48H15C13.4087 48 11.8826 47.3679 10.7574 46.2426C9.63214 45.1174 9 43.5913 9 42V6ZM27 39C27 38.2043 26.6839 37.4413 26.1213 36.8787C25.5587 36.3161 24.7956 36 24 36C23.2044 36 22.4413 36.3161 21.8787 36.8787C21.3161 37.4413 21 38.2043 21 39C21 39.7957 21.3161 40.5587 21.8787 41.1213C22.4413 41.6839 23.2044 42 24 42C24.7956 42 25.5587 41.6839 26.1213 41.1213C26.6839 40.5587 27 39.7957 27 39Z" fill="#D3382F"/>
@@ -27,7 +65,7 @@
           <h4>App Design</h4>
           <p>I specialize in creating captivating and user-friendly mobile app designs. With a keen focus on user experience (UX) and user interface (UI) design, my approach involves in-depth user research, wireframing, and rapid prototyping to bring innovative app concepts to life.</p>
         </div>
-        <div class="brand">
+        <div class="brand opacity-0 translate-y-10" :class="{ 'is-webvisible': isherimg }" ref="brand">
           <span class="services-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="27" height="26" viewBox="0 0 27 26" fill="none">
   <g clip-path="url(#clip0_7339_1086)">
@@ -58,6 +96,16 @@
 </template>
 
 <style scoped>
+.is-webvisible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.is-thirtvisible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 2s ease-in-out, transform 2s ease-in;
+}
 .ser {
   color: #D3382F;
 }
