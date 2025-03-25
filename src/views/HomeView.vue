@@ -4,6 +4,38 @@ import Services from '@/components/Services.vue';
 import Contact from '@/components/Contact.vue'
 import Skills from '@/components/Skills.vue';
 import Customer from '@/components/Customer.vue'
+import { useIntersectionObserver } from '@vueuse/core';
+import { ref, onMounted } from 'vue';
+import type { Ref } from 'vue';
+
+const about = ref<HTMLElement | null>(null);
+const about2 = ref<HTMLElement | null>(null);
+const isabout = ref(false);
+
+const addIntersectionObserver = (
+    element: Ref<HTMLElement | null>, animationClass: string, threshold: number
+) => {
+    useIntersectionObserver(
+        element,
+        ([entry], observer) => {
+            console.log("IntersectionObserver triggered:", entry.isIntersecting);
+            if (entry.isIntersecting) {
+                entry.target.classList.add(animationClass);
+                observer.disconnect();
+            } else {
+                entry.target.classList.remove(animationClass);
+            }
+        },
+        {
+            threshold
+        }
+    )
+}
+
+onMounted(()=> {
+    addIntersectionObserver(about, "is-aboutref", 0.4);
+    addIntersectionObserver(about2, "is-aboutref", 0.4);
+})
 </script>
 
 <template>
@@ -22,18 +54,18 @@ import Customer from '@/components/Customer.vue'
     <section class="about wrapper">
       <div class="about-txt">
         <h3>About Me</h3>
-        <h5>I'm Rachael Alogbe, a dedicated and passionate Product Designer
+        <h5 ref="about" class="opacity-0 translate-y-10" :class="{ 'is-about-ref': isabout }">I'm Rachael Alogbe, a dedicated and passionate Product Designer
           hailing from the vibrant city of Port Harcourt, Nigeria.</h5>
 
-          <p>My journey in the world of design started with a curiosity to understand how things work and a relentless desire to make them work better. With a background in Petroleum Engineering, I've cultivated a profound appreciation for the intersection of technology, human behavior, and aesthetics. Read more</p>
+          <p ref="about2" class="opacity-0 translate-y-10" :class="{ 'is-about-ref': isabout }">My journey in the world of design started with a curiosity to understand how things work and a relentless desire to make them work better. With a background in Petroleum Engineering, I've cultivated a profound appreciation for the intersection of technology, human behavior, and aesthetics. Read more</p>
         <button class="read-more">Download Resume</button>
       </div>
       <div class="about-svg">
-        <img src="../assets/Subtract.png" alt="racheal png logo" width="200px" height="200px" class="r-img vibrate">
+        <img src="../assets/Subtract.png" alt="racheal png logo" width="280px" height="280px" class="r-img vibrate">
       </div>
     </section>
     <Skills />
-    <section class="featured">
+    <section class="featured wrapper">
       <span>
         <hr class="line">
         <h5>Portfolio</h5>
@@ -66,6 +98,11 @@ import Customer from '@/components/Customer.vue'
 </template>
 
 <style scoped>
+.is-aboutref {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
 .wrapper {
     padding-block: 1.2rem;
     max-width: 1186px;
@@ -182,7 +219,9 @@ import Customer from '@/components/Customer.vue'
     /* border: 1px solid magenta; */
 
     img {
-      opacity: 0.4;
+      opacity: 0.7;
+      width: 200px;
+      height: 200px;
     }
   }
 }
@@ -362,6 +401,7 @@ import Customer from '@/components/Customer.vue'
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 24px;
+    justify-self: center;
 
     a {
       display: block;
@@ -483,6 +523,16 @@ import Customer from '@/components/Customer.vue'
     .about-txt p {
       font-size: 1.125rem;
     }
+
+    .about-svg {
+    /* border: 1px solid magenta; */
+
+    img {
+      opacity: 0.7;
+      width: 300px;
+      height: 300px;
+    }
+  }
   }
 }
 /* responsive stuff for mobile*/

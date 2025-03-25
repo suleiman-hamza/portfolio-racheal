@@ -9,7 +9,6 @@ const website = ref<HTMLElement | null>(null);
 const isherimg = ref(false);
 
 
-
 const addIntersectionObserver = (
     element: Ref<HTMLElement | null>, animationClass: string, threshold: number
 ) => {
@@ -36,19 +35,24 @@ onMounted(()=> {
 </script>
 
 <template>
-    <section class="hero-section-container wrapper">
-        <div class="hero-text">
-            <h4 class="hi">Hi, I'm Racheal</h4>
-            <!-- <h1 class="role">Product Designer</h1> -->
-            <TypingAnimation text="Product Designer" class="role text-left text-<2rem>/[<1.3>]"/>
-            <p class="role-desc">Dedicated to Crafting Intuitive and User-Centric Design Solutions. Currently, I am based in Port Harcourt City Nigeria</p>
-            <button class="cta">View My Works</button>
+    <section class="hero-section-container">
+        <div class="hero-inner wrapper">
+            <div class="hero-text">
+                <!-- <h4 class="hi">Hi, I'm Racheal</h4> -->
+                <!-- <h1 class="role">Product Designer</h1> -->
+                <TypingAnimation text="Hi, I'm Racheal" class="hi text-left"/>
+                <TypingAnimation text="Product Designer" class="role text-left"/>
+                <p class="role-desc">Dedicated to Crafting Intuitive and User-Centric Design Solutions. Currently, I am based in Port Harcourt City Nigeria</p>
+                <button class="cta">View My Works</button>
+            </div>
+            <div class="hero-img">
+                <img src="../assets/images/Rectangle 3.png" alt="racheal's photo" class="img-2 opacity-0 translate-y-10" :class="{ 'is-visible': isherimg }" ref="herimg">
+                <img src="../assets/images/Property 1=Variant2 (1).png" alt="variant 2" class="anim blink">
+                <img src="../assets/images/Property 1=Variant4.png" alt="variant 4" class="img">
+            </div>
+            <div class="xpr" ref="isherimg"><h5 class="p-4"><span>2+</span><br> Years of Experience</h5></div>
         </div>
-        <div class="hero-img">
-            <img src="../assets/images/Rectangle 3.png" alt="racheal's photo" class="img-2 opacity-0 translate-y-10" :class="{ 'is-visible': isherimg }" ref="herimg">
-            <img src="../assets/images/Property 1=Variant2 (1).png" alt="variant 2" class="anim blink">
-            <img src="../assets/images/Property 1=Variant4.png" alt="variant 4" class="img">
-        </div>
+        
     </section>
 </template>
 
@@ -65,15 +69,18 @@ onMounted(()=> {
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 .hero-section-container {
+    background: #FFF5F4;
+    position: relative;
+    /* border: 1px solid red; */
+}
+.hero-inner {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     overflow: hidden;
     margin-top: 3.5rem;
-    background: #FFF5F4;
     padding-inline: 1rem;
-    /* border: 1px solid red; */
 }
 .hero-text {
     display: flex;
@@ -92,6 +99,7 @@ onMounted(()=> {
     color: #111111;
     font-size: 2rem;/*72px;*/
     font-weight: 700;
+    margin-bottom: 1rem;
 }
 .role-desc {
     color: #111111;
@@ -133,6 +141,30 @@ onMounted(()=> {
     grid-row: 1 / 9;
 }
 
+.xpr {
+    background-color: #fff;
+    color: #111111;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    text-align: center;
+    margin-bottom: -20px;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    z-index: 12;
+
+    h5 {
+        font-weight: 700;
+
+        span {
+            font-size: 2rem;
+        }
+    }
+}
+
 .img-2 {
     position: relative;
     z-index: 2;
@@ -156,7 +188,7 @@ onMounted(()=> {
 
 /*min-width for the desktop screens*/
 @media(min-width: 765px) {
-    .hero-section-container {
+    .hero-inner {
         height: 100vh;
         grid-template-columns: 1fr 1fr;
         margin-top: 2.25rem;

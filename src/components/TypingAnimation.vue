@@ -39,7 +39,7 @@ watch(() => [props.duration, i.value], ([d, n]) => {
 })
 
 const className = cn(
-   'font-sans text-center text-4xl font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-sm dark:text-white',
+   'font-sans text-center text-4xl font-bold leading-[3rem] tracking-[-0.02em] drop-shadow-sm dark:text-white',
    props.class,
 )
 </script>

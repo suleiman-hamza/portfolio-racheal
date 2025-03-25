@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
+const route = useRoute()
 
 const target = ref(null);
 
@@ -10,6 +12,10 @@ function openMenu() {
     console.log(isMenuOpen.value)
 }
 onClickOutside(target, (event) => {
+    isMenuOpen.value = false
+})
+
+watch(route, ()=> {
     isMenuOpen.value = false
 })
 
@@ -36,15 +42,17 @@ onClickOutside(target, (event) => {
   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
 </svg> -->
             </button>
-            <div :class="['hamburger-menu', { show: isMenuOpen }]" v-show="isMenuOpen === true">
-                <ul class="nav-menu-list">
-                    <li><RouterLink to="/">Home</RouterLink></li>
-                    <li><RouterLink to="/portfolio">Portfolio</RouterLink></li>
-                    <li><RouterLink to="/about">About us</RouterLink></li>
-                    <li><RouterLink to="/resume">Resume</RouterLink></li>
-                    <li><RouterLink to="/contact">Contact us</RouterLink></li>
-                </ul>
-            </div>
+            <Transition name="nav-list">
+                <div :class="['hamburger-menu', { show: isMenuOpen }]" v-show="isMenuOpen === true">
+                    <ul class="nav-menu-list">
+                        <li><RouterLink to="/">Home</RouterLink></li>
+                        <li><RouterLink to="/portfolio">Portfolio</RouterLink></li>
+                        <li><RouterLink to="/about">About us</RouterLink></li>
+                        <li><RouterLink to="/resume">Resume</RouterLink></li>
+                        <li><RouterLink to="/contact">Contact us</RouterLink></li>
+                    </ul>
+                </div>
+            </Transition>
         </div>
     </nav>
 </template>
@@ -62,14 +70,19 @@ a {
     position: fixed;
     width: 100%;
     top: 0;
-    background-color: #000; /* Add background color to avoid transparency issues */
+    background-color:#FFF5F4; /* Add background color to avoid transparency issues */
     z-index: 1000; /* Ensure it stays on top */
+    box-shadow: -1px -5px 5px 3px #000;
 }
 
 .nav-menu {
     display: none;
     list-style: none;
     padding-left: 0;
+
+    li * {
+        color: #000
+    }
 }
 
 .nav-menu-list {
@@ -79,7 +92,8 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 1rem;
     height: 100%;
 }
 
@@ -111,6 +125,18 @@ a {
 
 .hamburger-menu.show {
     height: 50vh;
+}
+.router-link-active {
+    border-bottom: 1px solid red;
+}
+
+.nav-list-enter, .nav-list-leave-to {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.nav-list-enter-active, .nav-list-leave-active {
+    transition: all 0.3s ease-out;
 }
 
 @media (min-width: 750px) {
