@@ -64,7 +64,7 @@ onMounted(()=> {
         <img src="../assets/Subtract.png" alt="racheal png logo" width="280px" height="280px" class="r-img vibrate">
       </div>
     </section>
-    <Skills />
+    <!-- <Skills /> -->
     <section class="featured wrapper">
       <span>
         <hr class="line">

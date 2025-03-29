@@ -51,11 +51,11 @@ onMounted(()=> {
                     <h6>Wireframing</h6>
                     <h6>Informaion Architecture</h6>
                     <h6>Rapid Prototyping</h6>
-                    <h6>Collaboration</h6>
+                    <h6>Collaboration</h6> 
                     <h6>Problem Solving</h6>
                     <h6>Leadership</h6>
                     <h6>Communication</h6>
-                </div>  
+                </div>
                 </div>
                 <div class="cat-tools">
                 <span>

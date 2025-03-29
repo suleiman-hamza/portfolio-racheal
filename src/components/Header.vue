@@ -22,12 +22,12 @@ watch(route, ()=> {
 </script>
 
 <template>
-    <nav class="navigation">
+    <nav class="navigation items-center flex justify-between">
         <a href="#" class="logo">
-            <img src="../assets/Subtract.png" alt="Logo" width="40px">
+            <img src="../assets/Subtract.png" alt="Logo" width="40px" height="40px">
         </a>
         <ul class="nav-menu">
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li class="border-2 border-red-500"><RouterLink to="/">Home</RouterLink></li>
             <li><RouterLink to="/portfolio">Portfolio</RouterLink></li>
             <li><RouterLink to="/about">About us</RouterLink></li>
             <li><RouterLink to="/resume">Resume</RouterLink></li>
@@ -61,18 +61,14 @@ watch(route, ()=> {
 a {
     color: #ffffff;
 }
+.logo {
+    display: block;
+}
+
 .navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    /* border: 2px solid red; */
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background-color:#FFF5F4; /* Add background color to avoid transparency issues */
-    z-index: 1000; /* Ensure it stays on top */
-    box-shadow: -1px -5px 5px 3px #000;
+    height: min-content;
+    position: relative;
+    /* padding: 0.5rem; */
 }
 
 .nav-menu {
@@ -110,12 +106,13 @@ a {
 }
 
 .hamburger-menu {
-    position: fixed;
+    position: absolute;
     top: 70px;
+    z-index: 10;
     left: 0;
     width: 100%;
     height: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgb(237 176 176);
     overflow: hidden;
     transition: height 0.3s ease-in-out;
     display: flex;

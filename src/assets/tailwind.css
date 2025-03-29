@@ -1,12 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './base.css';
 
 #app {
   /* max-width: 1280px; */
-  margin: 0 auto;
+  margin: 0;
   font-weight: normal;
+}
+
+body{
+  margin: 0;
 }
 
 a,
@@ -16,4 +19,3 @@ a,
   transition: 0.4s;
   padding: 3px;
 }
-

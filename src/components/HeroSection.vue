@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Header from './Header.vue';
 import { onMounted, shallowRef, useTemplateRef , ref} from 'vue';
 import type { Ref } from 'vue';
 import TypingAnimation from '@/components/TypingAnimation.vue';
@@ -37,28 +38,29 @@ onMounted(()=> {
 <template>
     <section class="hero-section-container">
         <div class="hero-inner wrapper">
+            <Header class="header"/>
             <div class="hero-text">
-                <!-- <h4 class="hi">Hi, I'm Racheal</h4> -->
-                <!-- <h1 class="role">Product Designer</h1> -->
                 <TypingAnimation text="Hi, I'm Racheal" class="hi text-left"/>
                 <TypingAnimation text="Product Designer" class="role text-left"/>
                 <p class="role-desc">Dedicated to Crafting Intuitive and User-Centric Design Solutions. Currently, I am based in Port Harcourt City Nigeria</p>
-                <button class="cta">View My Works</button>
+                <button class="cta text-4xl border-2 p-4">View My Works</button>
             </div>
             <div class="hero-img">
                 <img src="../assets/images/Rectangle 3.png" alt="racheal's photo" class="img-2 opacity-0 translate-y-10" :class="{ 'is-visible': isherimg }" ref="herimg">
                 <img src="../assets/images/Property 1=Variant2 (1).png" alt="variant 2" class="anim blink">
                 <img src="../assets/images/Property 1=Variant4.png" alt="variant 4" class="img">
             </div>
-            <div class="xpr" ref="isherimg"><h5 class="p-4"><span>2+</span><br> Years of Experience</h5></div>
         </div>
-        
     </section>
 </template>
 
 <style lang="css" scoped>
+.header {
+    height: min-content;
+    padding: 0.5rem 1rem ;
+}
 .wrapper {
-    padding-block: 1.2rem;
+    /* padding-block: 1.2rem; */
     max-width: 1186px;
     margin-inline: auto;
 }
@@ -68,38 +70,58 @@ onMounted(()=> {
     transform: translateY(0);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
+
 .hero-section-container {
     background: #FFF5F4;
-    position: relative;
+    /* padding: 1rem; */
+    /* position: relative; */
     /* border: 1px solid red; */
 }
+
 .hero-inner {
-    height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     overflow: hidden;
-    margin-top: 3.5rem;
-    padding-inline: 1rem;
+    border: 1px solid blue;
+    /* padding: 1rem; */
 }
+
 .hero-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1rem;
+    max-width: 400px;
+    @media (min-width: 600px) {
+       
+            padding: 2rem;
+
+    }
+    
     /* border: 1px solid grey; */
     /* margin-block: 2rem; */
 }
+
+
+
 .hi {
     color: #d3382f;
     font-size: 1.25rem/*2rem*/;
     font-weight: 600;
     letter-spacing: 1.28px;
+    line-height: normal;
+    margin-bottom: 0.5rem;
 }
+
 .role {
     color: #111111;
     font-size: 2rem;/*72px;*/
     font-weight: 700;
     margin-bottom: 1rem;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 .role-desc {
     color: #111111;
@@ -107,6 +129,7 @@ onMounted(()=> {
     line-height: 24px;
     /* font-weight: 600; */
     /* letter-spacing: 0.9px; */
+    margin-top: 0;
     margin-bottom: 15px;
 }
 .cta {
@@ -114,13 +137,11 @@ onMounted(()=> {
       justify-content: center;
       align-items: center;
       background: #C41A26;
-      padding: 0.875rem 1.75rem;
+      padding: 0.75rem 1.25rem;
       color: #fff;
-      font-size: 1rem;
       border: none;
       cursor: pointer;
       width: fit-content;
-    margin-bottom: 14px;
 }
 
 .hero-img {
@@ -187,11 +208,16 @@ onMounted(()=> {
 }
 
 /*min-width for the desktop screens*/
-@media(min-width: 765px) {
+@media(min-width: 750px) {
     .hero-inner {
         height: 100vh;
         grid-template-columns: 1fr 1fr;
-        margin-top: 2.25rem;
+    }
+    .header {
+        grid-column: 1 / 3;
+    }
+    .hero-text {
+        grid-column: 1 / 2;
     }
     .cta  {
         padding: 11px 30px;
@@ -204,16 +230,7 @@ onMounted(()=> {
 }
 
 .hero-img {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    /* border: 1px solid rgb(199, 212, 11); */
-    height: auto;
-  /* display: block; */
-  object-fit: contain;
-  aspect-ratio: 1;
-  overflow: hidden;
-  /* padding: 1rem; */
+  margin-bottom: -50px;
 }
 .img, .img-2 {
     width: 100%;
