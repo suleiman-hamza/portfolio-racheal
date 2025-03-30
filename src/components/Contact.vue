@@ -5,7 +5,7 @@
           <hr class="line">
           <h5>Contact</h5>
         </div>
-        <h3>Ready to bring your ideas to life? <span>Contact Me</span></h3>
+        <h3 class="ready">Ready to bring your ideas to life? <span>Contact Me</span></h3>
       </div>
       <div class="contact-form">
         <div class="left-contact">
@@ -87,9 +87,10 @@
   margin-bottom: 4rem;
 
   > h3 {
-    max-width: 200px;
+    max-width: 600px;
     text-align: center;
     color: #3a3a3a;
+    font-size: clamp(1.45rem, -0.607rem + 4.486vw, 3.85rem);
 
     > span {
       color:#c41a26 ;

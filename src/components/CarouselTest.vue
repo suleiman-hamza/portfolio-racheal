@@ -5,18 +5,36 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 <template>
   <Carousel
-    class="elementCarousel"
+    class="elementCarousel h-full"
     :opts="{
       align: 'end',
     }"
   >
-  <div class="p-1"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, aliquam! Laboriosam aspernatur corporis minima inventore aut omnis provident reiciendis hic cum voluptatem doloribus aperiam odit quis assumenda, totam nihil esse?</p></div>
-    <CarouselContent>
-      <CarouselItem v-for="(_, index) in 5" :key="index" class="elementCarItem">
+    <div class="p-1 yellow-card">
+        <h4>
+            80+
+            <br>Satisfied 
+            <br>Customers
+        </h4>
+    </div>
+    <CarouselContent class="h-full">
+      <CarouselItem v-for="(_, index) in 5" :key="index" class="elementCarItem h-full">
         <div class="p-1">
-          <Card>
-            <CardContent class="flex aspect-square items-center justify-center">
-              <span class="text-3xl font-semibold">{{ index + 1 }}</span>
+          <Card class="h-full">
+            <CardContent class="flex h-full items-center justify-center">
+                <div>
+                    <div class="client-title">
+                        <span class="replace-img">
+                            <img src="../assets/images/Floyd-avatar.png" alt="bike shop">
+                        </span>
+                        <span>
+                            <h5>Floyd Miles</h5>
+                            <h6>Vice President, GoPro</h6>
+                        </span>
+                    </div>
+                    <span class="text-3xl font-semibold card-text">"I had the pleasure of working with Rachael, and I'm thrilled with the results. Her keen eye for detail and dedication to understanding our brand's essence resulted in a beautifully redesigned website. Rachael exceeded our expectations.”</span>
+                </div>
+                
             </CardContent>
           </Card>
         </div>
@@ -29,15 +47,19 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 <style scoped>
 .prev {
-    bottom: 20px;
-    left: 10px;
+    bottom: 45px;
+    left: 140px;
 }
 .next {
-    bottom: 20px;
-    left: 56px;
+    bottom: 45px;
+    left: 200px;
+}
+.h-full {
+    height: 100%;
+    /* border: 1px solid grey; */
 }
 .elementCarousel {
-    border: 1px solid red;
+    /* border: 1px solid red; */
   position: relative;
   width: 100%;
   display: grid;
@@ -52,8 +74,76 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
     padding: 1rem;
 }
 
+.card-text {
+    padding: 2rem;
+}
+
+.yellow-card {
+  background-color: #ffe517;
+  /* padding: 20px; */
+  text-align: left;
+  padding: 150px 40px 85px 70px;
+  position: relative;
+  /* border-radius: 10px; */
+}
+.yellow-card::after {
+    content: url('../assets/images/SuperToroid-Black-Matte.png');
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.yellow-card h4 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #000;
+}
+
+.client-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.client-title img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+}
+
+.client-title h5 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Inter;
+  line-height: 30px;
+  color: #1e1e1e;
+}
+
+.client-title h6 {
+  margin: 0;
+  font-weight: 400;
+  font-family: Inter;
+  line-height: 25px;
+  font-size: 18px;
+  color: #3a3a3a;
+}
+
+.testimony-card p {
+  margin: 0;
+  font-size: 1.24rem;
+  font-family: "Open Sans Pro";
+  font-weight: 400;
+  line-height: 35px;
+  color: #3a3a3a;
+
+}
+
 /*Medium screens (md) and up - typically 768px in Tailwind*/
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .elementCarItem {
     flex-basis: 50%; 
   }
@@ -61,7 +151,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
   .elementCarousel {
   grid-template-columns: 1fr;
 }
-}
+} */
 
 /* Large screens (lg) and up - typically 1024px in Tailwind */
 /* @media (min-width: 1024px) {
