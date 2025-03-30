@@ -17,12 +17,12 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
             <br>Customers
         </h4>
     </div>
-    <CarouselContent class="h-full">
+    <CarouselContent class="h-full card-content">
       <CarouselItem v-for="(_, index) in 5" :key="index" class="elementCarItem h-full">
         <div class="p-1">
           <Card class="h-full">
             <CardContent class="flex h-full items-center justify-center">
-                <div>
+                <div class="main-card">
                     <div class="client-title">
                         <span class="replace-img">
                             <img src="../assets/images/Floyd-avatar.png" alt="bike shop">
@@ -64,18 +64,34 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: #f9f9f9;
 }
 
 /* Base styles (before md breakpoint) */
 .elementCarItem {
   flex-basis: 50% /* Default if not specified */
 }
+
+.card-content {
+    background-color: #f9f9f9;
+}
 .p-1 {
     padding: 1rem;
 }
 
+.main-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
 .card-text {
-    padding: 2rem;
+    margin: 0;
+  font-size: 1.24rem;
+  font-family: "Open Sans Pro";
+  font-weight: 400;
+  line-height: 35px;
+  color: #3a3a3a;
 }
 
 .yellow-card {
