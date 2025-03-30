@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection.vue';
 import Services from '@/components/Services.vue';
 import Contact from '@/components/Contact.vue'
 import Skills from '@/components/Skills.vue';
+import CarouselTest from '@/components/CarouselTest.vue'
 import Customer from '@/components/Customer.vue'
 import { useIntersectionObserver } from '@vueuse/core';
 import { ref, onMounted } from 'vue';
@@ -65,6 +66,7 @@ onMounted(()=> {
       </div>
     </section>
     <!-- <Skills /> -->
+     <CarouselTest />
     <section class="featured wrapper">
       <span>
         <hr class="line">
