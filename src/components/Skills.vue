@@ -102,6 +102,7 @@ onMounted(()=> {
       height: 2px;
       background-color: #D3382F;
       border: none;
+      margin: 0;
 }
 h5 {
       font-size: 1.125rem;
@@ -109,6 +110,7 @@ h5 {
       line-height: 27.756px;
       font-weight: 400;
       color: #3a3a3a;
+      margin: 0;
 }
 h2 {
     font-weight: 700;

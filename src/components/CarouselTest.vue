@@ -17,9 +17,9 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
             <br>Customers
         </h4>
     </div>
-    <CarouselContent class="h-full card-content">
+    <CarouselContent class="h-full card-content p-1">
       <CarouselItem v-for="(_, index) in 5" :key="index" class="elementCarItem h-full">
-        <div class="p-1">
+        <div>
           <Card class="h-full">
             <CardContent class="flex h-full items-center justify-center">
                 <div class="main-card">
@@ -63,7 +63,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   background-color: #f9f9f9;
 }
 

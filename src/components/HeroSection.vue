@@ -4,6 +4,8 @@ import { onMounted, shallowRef, useTemplateRef , ref} from 'vue';
 import type { Ref } from 'vue';
 import TypingAnimation from '@/components/TypingAnimation.vue';
 import { useIntersectionObserver } from '@vueuse/core';
+import { useRouter } from 'vue-router';
+const router = useRouter()
 
 const herimg = ref<HTMLElement | null>(null);
 const website = ref<HTMLElement | null>(null);
@@ -43,7 +45,7 @@ onMounted(()=> {
                 <TypingAnimation text="Hi, I'm Racheal" class="hi text-left"/>
                 <TypingAnimation text="Product Designer" class="role text-left"/>
                 <p class="role-desc">Dedicated to Crafting Intuitive and User-Centric Design Solutions. Currently, I am based in Port Harcourt City Nigeria</p>
-                <button class="cta text-4xl border-2 p-4">View My Works</button>
+                <button @click="router.push('/#portfolio')" class="cta text-4xl border-2 p-4">View My Works</button>
             </div>
             <div class="hero-img">
                 <img src="../assets/images/Rectangle 3.png" alt="racheal's photo" class="img-2 opacity-0 translate-y-10" :class="{ 'is-visible': isherimg }" ref="herimg">

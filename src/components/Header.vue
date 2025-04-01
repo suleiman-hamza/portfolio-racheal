@@ -27,11 +27,11 @@ watch(route, ()=> {
             <img src="../assets/Subtract.png" alt="Logo" width="40px" height="40px">
         </a>
         <ul class="nav-menu">
-            <li class="border-2 border-red-500"><RouterLink to="/">Home</RouterLink></li>
-            <li><RouterLink to="/portfolio">Portfolio</RouterLink></li>
+            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><RouterLink :to="{ path: '/', hash:'#portfolio' }">Portfolio</RouterLink></li>
             <li><RouterLink to="/about">About us</RouterLink></li>
             <li><RouterLink to="/resume">Resume</RouterLink></li>
-            <li><RouterLink to="/contact">Contact us</RouterLink></li>
+            <li><RouterLink :to="{ path: '/', hash:'#contact' }">Contact us</RouterLink></li>
         </ul>
         <div class="hamburger" ref="target">
             <button @click="openMenu">
@@ -46,10 +46,11 @@ watch(route, ()=> {
                 <div :class="['hamburger-menu', { show: isMenuOpen }]" v-show="isMenuOpen === true">
                     <ul class="nav-menu-list">
                         <li><RouterLink to="/">Home</RouterLink></li>
-                        <li><RouterLink to="/portfolio">Portfolio</RouterLink></li>
+                        <li><RouterLink :to="{ path: '/', hash:'#portfolio' }">Portfolio</RouterLink></li>
+                        <!-- <li><a href="#portfolio">Poral</a></li> -->
                         <li><RouterLink to="/about">About us</RouterLink></li>
                         <li><RouterLink to="/resume">Resume</RouterLink></li>
-                        <li><RouterLink to="/contact">Contact us</RouterLink></li>
+                        <li><RouterLink :to="{ path: '/', hash:'#contact' }">Contact us</RouterLink></li>
                     </ul>
                 </div>
             </Transition>

@@ -3,11 +3,12 @@ import HeroSection from '@/components/HeroSection.vue';
 import Services from '@/components/Services.vue';
 import Contact from '@/components/Contact.vue'
 import Skills from '@/components/Skills.vue';
-import CarouselTest from '@/components/CarouselTest.vue'
-import Customer from '@/components/Customer.vue'
+import CarouselTest from '@/components/CarouselTest.vue';
 import { useIntersectionObserver } from '@vueuse/core';
 import { ref, onMounted } from 'vue';
 import type { Ref } from 'vue';
+import { useRouter } from 'vue-router';
+const router = useRouter()
 
 const about = ref<HTMLElement | null>(null);
 const about2 = ref<HTMLElement | null>(null);
@@ -59,21 +60,47 @@ onMounted(()=> {
           hailing from the vibrant city of Port Harcourt, Nigeria.</h5>
 
           <p ref="about2" class="opacity-0 translate-y-10" :class="{ 'is-about-ref': isabout }">My journey in the world of design started with a curiosity to understand how things work and a relentless desire to make them work better. With a background in Petroleum Engineering, I've cultivated a profound appreciation for the intersection of technology, human behavior, and aesthetics. Read more</p>
-        <button class="read-more">Download Resume</button>
+        <button class="read-more" @click="router.push('/about')">Read More</button>
       </div>
       <div class="about-svg">
         <img src="../assets/Subtract.png" alt="racheal png logo" width="280px" height="280px" class="r-img vibrate">
       </div>
     </section>
-    <!-- <Skills /> -->
-     <CarouselTest />
-    <section class="featured wrapper">
+    <Skills />
+    <section class="featured wrapper" id="portfolio">
       <span>
         <hr class="line">
         <h5>Portfolio</h5>
       </span>
       <h2>Featured Project</h2>
       <div class="ft-grid">
+        <span>
+          <img src="../assets/images/Group 35861 (2).png" alt="grid image">
+          <a href="#">View</a>
+        </span>
+        <span>
+          <img src="../assets/images/Group 35862 (1).png" alt="grid image">
+          <a href="#">View</a>
+        </span>
+        <span>
+          <img src="../assets/images/Group 35859 (1).png" alt="grid image">
+          <a href="#">View</a>
+        </span>
+        <span>
+          <img src="../assets/images/Group 46.png" alt="grid image">
+          <a href="#">View</a>
+        </span>
+        <span>
+          <img src="../assets/images/Group 35863.png" alt="grid image">
+          <a href="#">View</a>
+        </span>
+        <span>
+          <img src="../assets/images/Group 35860.png" alt="">
+          <a href="#">View</a>
+
+        </span>
+      </div>
+      <!-- <div class="ft-grid">
         <a href="#">
           <img src="../assets/images/Group 35861 (2).png" alt="grid image">
         </a>
@@ -92,9 +119,9 @@ onMounted(()=> {
         <a href="#">
           <img src="../assets/images/Group 35860.png" alt="">
         </a>
-      </div>
+      </div> -->
     </section>
-    <Customer />
+    <CarouselTest/>
     <Contact /> <!--contact section inported component-->
   </main>
 </template>
@@ -315,6 +342,14 @@ onMounted(()=> {
       line-height: normal;
     }
 
+    .line {
+        width: 147px;
+        height: 2px;
+        background-color: #D3382F;
+        border: none;
+        margin: 0;
+    }
+
     .xp-list, .ed-list {
       display: flex;
       flex-direction: column;
@@ -377,15 +412,17 @@ onMounted(()=> {
   }
 
   > span {
+  /* border: 1px solid red; */
     display: flex;
     align-items: center;
     gap: 1rem;
-
+    
     .line {
       width: 147px;
       height: 2px;
       background-color: #D3382F;
       border: none;
+      margin: 0;
     }
     h5 {
       color: #3a3a3a;
@@ -395,7 +432,7 @@ onMounted(()=> {
       font-weight: 400;
       /* line-height: 154.2%; 27.756px */
       letter-spacing: 0.63px;
-      margin-bottom: 8px;
+      margin: 0;
     }
   }
 
@@ -405,11 +442,21 @@ onMounted(()=> {
     gap: 24px;
     justify-self: center;
 
+    span {
+      position: relative;
+      border: 1px solid red;
+    }
+
     a {
       display: block;
       overflow: hidden;
-      width: 100%;
-      height: 100%;
+      padding: 1rem 1.5rem;
+      background-color: #3A3A3A;
+      /* width: 100%;
+      height: 100%; */
+      border: 2px solid white;
+      position: absolute;
+      bottom: 10px;
     }
 
     img {

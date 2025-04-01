@@ -1,5 +1,5 @@
 <template>
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="contact-top">
         <div class="hr-line">
           <hr class="line">
@@ -107,6 +107,7 @@
       height: 2px;
       background-color: #D3382F;
       border: none;
+      margin: 0;
     }
     h5 {
       color: #3a3a3a;
@@ -116,15 +117,16 @@
       font-weight: 400;
       /* line-height: 154.2%; 27.756px */
       letter-spacing: 0.63px;
-      margin-bottom: 8px;
+      margin: 0;
     }
   }
 
   .contact-form {
-    border: 2px solid #3a3a3a3d;
+    /* border: 2px solid #3a3a3a3d; */
   }
   .c-bold {
     font-weight: 700;
+    margin-bottom: 0.5rem;
   }
   .left-contact {
     display: flex;
@@ -137,7 +139,7 @@
     .phone, .email, .location {
       display: flex;
       justify-content: left;
-      align-items: flex-start;
+      align-items: center;
       gap: 1.2rem;
       /* border: 1px solid grey; */
 
@@ -145,6 +147,15 @@
         color: #272727;
         font-size: 1.125rem;
         font-weight: 700;
+
+        > * {
+          margin-top: 0;
+          margin-bottom: 0.25rem;
+        }
+        :is(:not(.c-bold)) {
+          font-weight: 400;
+          letter-spacing: 1px;
+        } 
       }
     }
   }
