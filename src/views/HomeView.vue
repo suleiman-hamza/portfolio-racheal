@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection.vue';
 import Services from '@/components/Services.vue';
 import Contact from '@/components/Contact.vue'
 import Skills from '@/components/Skills.vue';
+import Feature from '@/components/Feature.vue';
 import CarouselTest from '@/components/CarouselTest.vue';
 import { useIntersectionObserver } from '@vueuse/core';
 import { ref, onMounted } from 'vue';
@@ -67,60 +68,9 @@ onMounted(()=> {
       </div>
     </section>
     <Skills />
-    <section class="featured wrapper" id="portfolio">
-      <span>
-        <hr class="line">
-        <h5>Portfolio</h5>
-      </span>
-      <h2>Featured Project</h2>
-      <div class="ft-grid">
-        <span>
-          <img src="../assets/images/Group 35861 (2).png" alt="grid image">
-          <a href="#">View</a>
-        </span>
-        <span>
-          <img src="../assets/images/Group 35862 (1).png" alt="grid image">
-          <a href="#">View</a>
-        </span>
-        <span>
-          <img src="../assets/images/Group 35859 (1).png" alt="grid image">
-          <a href="#">View</a>
-        </span>
-        <span>
-          <img src="../assets/images/Group 46.png" alt="grid image">
-          <a href="#">View</a>
-        </span>
-        <span>
-          <img src="../assets/images/Group 35863.png" alt="grid image">
-          <a href="#">View</a>
-        </span>
-        <span>
-          <img src="../assets/images/Group 35860.png" alt="">
-          <a href="#">View</a>
-
-        </span>
-      </div>
-      <!-- <div class="ft-grid">
-        <a href="#">
-          <img src="../assets/images/Group 35861 (2).png" alt="grid image">
-        </a>
-        <a href="#">
-          <img src="../assets/images/Group 35862 (1).png" alt="grid image">
-        </a>
-        <a href="#">
-          <img src="../assets/images/Group 35859 (1).png" alt="grid image">
-        </a>
-        <a href="#">
-          <img src="../assets/images/Group 46.png" alt="grid image">
-        </a>
-        <a href="#">
-          <img src="../assets/images/Group 35863.png" alt="grid image">
-        </a>
-        <a href="#">
-          <img src="../assets/images/Group 35860.png" alt="">
-        </a>
-      </div> -->
-    </section>
+    
+    <Feature />
+    
     <CarouselTest/>
     <Contact /> <!--contact section inported component-->
   </main>
@@ -397,76 +347,6 @@ onMounted(()=> {
     }
   }
 
-}
-
-.featured {
-  padding: 1rem;
-
-  h2 {
-    color: #1e1e1e;
-    font-size: clamp(1.45rem, -0.607rem + 4.286vw, 3.65rem);
-    font-weight: 700;
-    font-family: "Open Sans";
-    line-height: normal;
-    margin-bottom: 3.25rem;
-  }
-
-  > span {
-  /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    
-    .line {
-      width: 147px;
-      height: 2px;
-      background-color: #D3382F;
-      border: none;
-      margin: 0;
-    }
-    h5 {
-      color: #3a3a3a;
-      font-family: "Source Sans Pro";
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      /* line-height: 154.2%; 27.756px */
-      letter-spacing: 0.63px;
-      margin: 0;
-    }
-  }
-
-  .ft-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 24px;
-    justify-self: center;
-
-    span {
-      position: relative;
-      border: 1px solid red;
-    }
-
-    a {
-      display: block;
-      overflow: hidden;
-      padding: 1rem 1.5rem;
-      background-color: #3A3A3A;
-      /* width: 100%;
-      height: 100%; */
-      border: 2px solid white;
-      position: absolute;
-      bottom: 10px;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-      aspect-ratio: 1;
-    }
-  }
 }
 
 /* .customer {
