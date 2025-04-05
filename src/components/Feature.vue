@@ -175,12 +175,12 @@ function onHover() {
 
     span {
       position: relative;
-      border: 1px solid red;
+      /* border: 1px solid red; */
     } 
   }
 }
 .pagination-controls {
-    border: 1px solid seagreen;
+    /* border: 1px solid seagreen; */
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -188,6 +188,10 @@ function onHover() {
 
     button {
         padding: 0.5rem;
+    }
+
+    .active {
+        background-color: red;
     }
 }
 

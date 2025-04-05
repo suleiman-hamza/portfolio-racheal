@@ -1,6 +1,28 @@
 <script setup lang="ts">
+import {ref} from 'vue'
 import { Card, CardContent } from '@/components/ui/card'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+
+const clientList = ref([
+  {
+    img: 'src/assets/images/Floyd-avatar.png',
+    name: 'Floyd Miles',
+    position: 'Vice President, GoPro',
+    what: "I had the pleasure of working with Rachael, and I'm thrilled with the results. Her keen eye for detail and dedication to understanding our brand's essence resulted in a beautifully redesigned website. Rachael exceeded our expectations."
+  },
+  {
+    img: 'src/assets/images/Floyd-avatar.png',
+    name: 'Lexi Scott',
+    position: 'President, GoPro',
+    what: "I had the pleasure of working with Rachael, and I'm thrilled with the results. Her keen eye for detail and dedication to understanding our brand's essence resulted in a beautifully redesigned website. Rachael exceeded our expectations."
+  },
+  {
+    img: 'src/assets/images/Floyd-avatar.png',
+    name: 'Suleiman Hamza',
+    position: 'Vice President, GoPro',
+    what: "I had the pleasure of working with Rachael, and I'm thrilled with the results. Her keen eye for detail and dedication to understanding our brand's essence resulted in a beautifully redesigned website. Rachael exceeded our expectations."
+  }
+])
 </script>
 
 <template>
@@ -18,21 +40,21 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
         </h4>
     </div>
     <CarouselContent class="h-full card-content p-1">
-      <CarouselItem v-for="(_, index) in 5" :key="index" class="elementCarItem h-full">
+      <CarouselItem v-for="(client, index) in clientList" :key="index" class="elementCarItem h-full">
         <div>
           <Card class="h-full">
             <CardContent class="flex h-full items-center justify-center">
                 <div class="main-card">
                     <div class="client-title">
                         <span class="replace-img">
-                            <img src="../assets/images/Floyd-avatar.png" alt="bike shop">
+                            <img :src="client.img" alt="bike shop">
                         </span>
                         <span>
-                            <h5>Floyd Miles</h5>
-                            <h6>Vice President, GoPro</h6>
+                            <h5>{{ client.name }}</h5>
+                            <h6>{{ client.position }}</h6>
                         </span>
                     </div>
-                    <span class="text-3xl font-semibold card-text">"I had the pleasure of working with Rachael, and I'm thrilled with the results. Her keen eye for detail and dedication to understanding our brand's essence resulted in a beautifully redesigned website. Rachael exceeded our expectations.”</span>
+                    <span class="text-3xl font-semibold card-text">{{ client.what }}</span>
                 </div>
                 
             </CardContent>
