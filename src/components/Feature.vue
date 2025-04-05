@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import FeatureCard from '@/components/FeatureCard.vue'
+import { ref, computed, watch } from 'vue';
+import FeatureCard from '@/components/FeatureCard.vue';
+import Button from './ui/button/Button.vue';
 
-const itemsPerPage = ref(6)
-const currentPage = ref(1)
+const showLink = ref(false);
+const itemsPerPage = ref(6);
+const currentPage = ref(1);
 const project = ref([
     {
         imgsrc: 'src/assets/images/Group 35861 (2).png',
@@ -84,6 +86,10 @@ function previousPage() {
         currentPage.value--;
     }
 }
+
+function onHover() {
+    console.log("Something's Up")
+}
 </script>
 
 <template>
@@ -92,29 +98,31 @@ function previousPage() {
         <hr class="line">
         <h5>Portfolio</h5>
       </span>
-      <h2>Featured Project</h2>
-      <div class="ft-grid">
+      <h2 @mouseover="onHover">Featured Project</h2>
+      
+      <transition-group class="ft-grid" tag="div" name="list" v-auto-animate>
         <FeatureCard 
             class="border"
             v-for="card in paginatedProducts"
             :card="card"
+            @mouseover="onHover"
         />
-      </div>
+      </transition-group>
       
     <div class="pagination-controls">
-        <button @click="previousPage" :disabled="currentPage === 1">
+        <Button @click="previousPage" :disabled="currentPage === 1">
             Previous
-        </button>
+        </Button>
         
         <span v-for="page in totalPages" :key="page">
-            <button @click="currentPage = page" :class="{ active: currentPage === page }">
+            <Button @click="currentPage = page" :class="{ active: currentPage === page }">
             {{ page }}
-            </button>
+            </Button>
         </span>
 
-        <button @click="nextPage" :disabled="currentPage === totalPages">
+        <Button @click="nextPage" :disabled="currentPage === totalPages">
             Next
-        </button>
+        </Button>
     </div>
     </section>
 </template>
@@ -168,9 +176,31 @@ function previousPage() {
     span {
       position: relative;
       border: 1px solid red;
-    }
-
-    
+    } 
   }
 }
+.pagination-controls {
+    border: 1px solid seagreen;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-block: 2rem;
+
+    button {
+        padding: 0.5rem;
+    }
+}
+
+.list-enter-active, .list-leave-active {
+    transition: all 0.5s ease-out;
+}
+.list-enter-from, .list-leave-to {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+.list-enter-to, .list-enter-from {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
 </style>

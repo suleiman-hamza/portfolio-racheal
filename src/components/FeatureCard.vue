@@ -14,7 +14,7 @@ const props = defineProps({
 })
 </script>
 
-<style>
+<style scoped>
     a {
       display: block;
       overflow: hidden;
